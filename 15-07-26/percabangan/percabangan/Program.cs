@@ -22,7 +22,7 @@ int nilai = 100;
 if (nilai == 100)
 {
     Console.WriteLine("nilai sempurna : ", nilai);
-} else if  (nilai >= 80)
+} else if  (nilai >= 80) // if else digunakan sebagai pilihan lain dengan memiliki ketentuan seperti if
 {
     Console.WriteLine("nilai bagus : ", nilai);
 } else
@@ -33,10 +33,10 @@ if (nilai == 100)
 
 // SWITCH 
 
-string role = "Admin";
+string role = "Admin"; // variable untuk switch
 
 
-switch (role) 
+switch (role) // <-- untuk memeriksa nilai variable
 {
     case "Admin":
         Console.WriteLine("Hai, Admin");
