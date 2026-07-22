@@ -29,41 +29,63 @@ namespace CalculatorConsole
 
                 int pilih = Convert.ToInt32(Console.ReadLine());
 
-                Console.Clear();
-
-                switch (pilih)
+                if (pilih == 5)
                 {
-                    case 1:
-                        sederhana.Menu();
-                        break;
-
-                    case 2:
-                        datar.Menu();
-                        break;
-
-                    case 3:
-                        ruang.Menu();
-                        break;
-
-                    case 4:
-                        zodiak.Menu();
-                        break;
-
-                    case 5:
-                        jalan = false;
-                        Console.WriteLine("Terima kasih telah menggunakan Calculator Console.");
-                        break;
-
-                    default:
-                        Console.WriteLine("Menu tidak tersedia!");
-                        break;
+                    Console.WriteLine("Terima kasih telah menggunakan Calculator Console.");
+                    break;
                 }
 
-                if (jalan)
+                bool ulang = true;
+
+                while (ulang)
                 {
+                    Console.Clear();
+
+                    switch (pilih)
+                    {
+                        case 1:
+                            sederhana.Menu();
+                            break;
+
+                        case 2:
+                            datar.Menu();
+                            break;
+
+                        case 3:
+                            ruang.Menu();
+                            break;
+
+                        case 4:
+                            zodiak.Menu();
+                            break;
+
+                        default:
+                            Console.WriteLine("Menu tidak tersedia!");
+                            ulang = false;
+                            continue;
+                    }
+
                     Console.WriteLine();
-                    Console.WriteLine("Tekan ENTER untuk kembali ke menu utama...");
-                    Console.ReadLine();
+                    Console.WriteLine("==========================");
+                    Console.WriteLine("1. Ulangi");
+                    Console.WriteLine("2. Menu Utama");
+                    Console.Write("Pilih : ");
+
+                    int pilihan = Convert.ToInt32(Console.ReadLine());
+
+                    if (pilihan == 1)
+                    {
+                        continue;
+                    }
+                    else if (pilihan == 2)
+                    {
+                        ulang = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pilihan tidak tersedia!");
+                        Console.ReadLine();
+                    }
                 }
             }
         }
