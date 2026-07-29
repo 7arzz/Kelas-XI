@@ -396,7 +396,7 @@ namespace CalculatorConsole
 
                     int pilihan = Convert.ToInt32(Console.ReadLine());
 
-                    if (pilihan == 1)
+                    if (pilihan == 1) 
                     {
                         continue;
                     }
