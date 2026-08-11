@@ -36,25 +36,25 @@
             labelLogout = new Label();
             pictureBox7 = new PictureBox();
             labelStatus = new Label();
-            pictureBox6 = new PictureBox();
+            pictureBoxStatus = new PictureBox();
             labelPromo = new Label();
-            pictureBox5 = new PictureBox();
+            pictureBoxPromo = new PictureBox();
             labelJadwal = new Label();
-            pictureBox4 = new PictureBox();
+            pictureBoxJadwal = new PictureBox();
             labelMaskapai = new Label();
-            pictureBox3 = new PictureBox();
+            pictureBoxMaskapai = new PictureBox();
             labelBandara = new Label();
-            pictureBox2 = new PictureBox();
+            pictureBoxBandara = new PictureBox();
             panelContent = new Panel();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStatus).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPromo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxJadwal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMaskapai).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBandara).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -94,15 +94,15 @@
             panel1.Controls.Add(labelLogout);
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(labelStatus);
-            panel1.Controls.Add(pictureBox6);
+            panel1.Controls.Add(pictureBoxStatus);
             panel1.Controls.Add(labelPromo);
-            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(pictureBoxPromo);
             panel1.Controls.Add(labelJadwal);
-            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(pictureBoxJadwal);
             panel1.Controls.Add(labelMaskapai);
-            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBoxMaskapai);
             panel1.Controls.Add(labelBandara);
-            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBoxBandara);
             panel1.Location = new Point(0, 66);
             panel1.Name = "panel1";
             panel1.Size = new Size(189, 382);
@@ -142,15 +142,16 @@
             labelStatus.Text = "Ubah Status Penerbangan";
             labelStatus.Click += labelStatus_Click;
             // 
-            // pictureBox6
+            // pictureBoxStatus
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(12, 249);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(33, 34);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 21;
-            pictureBox6.TabStop = false;
+            pictureBoxStatus.Image = (Image)resources.GetObject("pictureBoxStatus.Image");
+            pictureBoxStatus.Location = new Point(12, 249);
+            pictureBoxStatus.Name = "pictureBoxStatus";
+            pictureBoxStatus.Size = new Size(33, 34);
+            pictureBoxStatus.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStatus.TabIndex = 21;
+            pictureBoxStatus.TabStop = false;
+            pictureBoxStatus.Click += pictureBoxStatus_Click_1;
             // 
             // labelPromo
             // 
@@ -163,15 +164,16 @@
             labelPromo.Text = "Master Kode Promo";
             labelPromo.Click += labelPromo_Click;
             // 
-            // pictureBox5
+            // pictureBoxPromo
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(12, 188);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(33, 34);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 19;
-            pictureBox5.TabStop = false;
+            pictureBoxPromo.Image = (Image)resources.GetObject("pictureBoxPromo.Image");
+            pictureBoxPromo.Location = new Point(12, 188);
+            pictureBoxPromo.Name = "pictureBoxPromo";
+            pictureBoxPromo.Size = new Size(33, 34);
+            pictureBoxPromo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxPromo.TabIndex = 19;
+            pictureBoxPromo.TabStop = false;
+            pictureBoxPromo.Click += pictureBoxPromo_Click;
             // 
             // labelJadwal
             // 
@@ -184,15 +186,16 @@
             labelJadwal.Text = "Master Penjadwalan Penerbangan";
             labelJadwal.Click += labelJadwal_Click;
             // 
-            // pictureBox4
+            // pictureBoxJadwal
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 134);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(33, 34);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 17;
-            pictureBox4.TabStop = false;
+            pictureBoxJadwal.Image = (Image)resources.GetObject("pictureBoxJadwal.Image");
+            pictureBoxJadwal.Location = new Point(12, 134);
+            pictureBoxJadwal.Name = "pictureBoxJadwal";
+            pictureBoxJadwal.Size = new Size(33, 34);
+            pictureBoxJadwal.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxJadwal.TabIndex = 17;
+            pictureBoxJadwal.TabStop = false;
+            pictureBoxJadwal.Click += pictureBoxJadwal_Click;
             // 
             // labelMaskapai
             // 
@@ -205,15 +208,16 @@
             labelMaskapai.Text = "Master Maskapai";
             labelMaskapai.Click += labelMaskapai_Click;
             // 
-            // pictureBox3
+            // pictureBoxMaskapai
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(12, 79);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(33, 34);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 15;
-            pictureBox3.TabStop = false;
+            pictureBoxMaskapai.Image = (Image)resources.GetObject("pictureBoxMaskapai.Image");
+            pictureBoxMaskapai.Location = new Point(12, 79);
+            pictureBoxMaskapai.Name = "pictureBoxMaskapai";
+            pictureBoxMaskapai.Size = new Size(33, 34);
+            pictureBoxMaskapai.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxMaskapai.TabIndex = 15;
+            pictureBoxMaskapai.TabStop = false;
+            pictureBoxMaskapai.Click += pictureBoxMaskapai_Click;
             // 
             // labelBandara
             // 
@@ -226,15 +230,16 @@
             labelBandara.Text = "Master Bandara";
             labelBandara.Click += labelBandara_Click;
             // 
-            // pictureBox2
+            // pictureBoxBandara
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 27);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(33, 34);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
+            pictureBoxBandara.Image = (Image)resources.GetObject("pictureBoxBandara.Image");
+            pictureBoxBandara.Location = new Point(12, 27);
+            pictureBoxBandara.Name = "pictureBoxBandara";
+            pictureBoxBandara.Size = new Size(33, 34);
+            pictureBoxBandara.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxBandara.TabIndex = 12;
+            pictureBoxBandara.TabStop = false;
+            pictureBoxBandara.Click += pictureBoxBandara_Click;
             // 
             // panelContent
             // 
@@ -252,17 +257,18 @@
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
             Name = "FormDashboard";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FormDashboard";
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStatus).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPromo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxJadwal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMaskapai).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBandara).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,17 +278,17 @@
         private Panel panel1;
         private Label labelRegister;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxBandara;
         private Label labelLogout;
         private PictureBox pictureBox7;
         private Label labelStatus;
-        private PictureBox pictureBox6;
+        private PictureBox pictureBoxStatus;
         private Label labelPromo;
-        private PictureBox pictureBox5;
+        private PictureBox pictureBoxPromo;
         private Label labelJadwal;
-        private PictureBox pictureBox4;
+        private PictureBox pictureBoxJadwal;
         private Label labelMaskapai;
-        private PictureBox pictureBox3;
+        private PictureBox pictureBoxMaskapai;
         private Label labelBandara;
         private Panel panelContent;
     }

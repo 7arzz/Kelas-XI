@@ -147,6 +147,7 @@
             Controls.Add(textBoxUsn);
             Controls.Add(labelUsn);
             Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Login Form";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

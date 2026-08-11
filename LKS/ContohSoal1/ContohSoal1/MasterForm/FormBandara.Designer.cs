@@ -215,6 +215,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormBandara";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "BandaraForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();

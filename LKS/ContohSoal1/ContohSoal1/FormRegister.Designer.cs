@@ -224,6 +224,7 @@
             Controls.Add(labelUsn);
             Controls.Add(labelRegister);
             Name = "FormRegister";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FormRegister";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

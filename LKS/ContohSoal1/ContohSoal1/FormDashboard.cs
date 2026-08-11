@@ -32,6 +32,7 @@ namespace ContohSoal1
         {
             labelBandara.ForeColor = Color.Gray;
             labelMaskapai.ForeColor = Color.Gray;
+            labelJadwal.ForeColor = Color.Gray;
             labelPromo.ForeColor = Color.Gray;
             labelStatus.ForeColor = Color.Gray;
         }
@@ -50,6 +51,8 @@ namespace ContohSoal1
             login.Show();
         }
 
+
+        // LABEL
         private void labelBandara_Click(object sender, EventArgs e)
         {
             resetForeColor();
@@ -82,6 +85,39 @@ namespace ContohSoal1
         {
             resetForeColor();
             labelStatus.ForeColor = Color.Black;
+            OpenForm(new FormStatus());
+        }
+
+        // IMAGE
+        private void pictureBoxBandara_Click(object sender, EventArgs e)
+        {
+            resetForeColor();
+            labelBandara.ForeColor = Color.Black;
+            OpenForm(new FormBandara());
+        }
+        private void pictureBoxPromo_Click(object sender, EventArgs e)
+        {
+            resetForeColor();
+            labelBandara.ForeColor = Color.Black;
+            OpenForm(new FormPromo());
+        }
+        private void pictureBoxJadwal_Click(object sender, EventArgs e)
+        {
+            resetForeColor();
+            labelBandara.ForeColor = Color.Black;
+            OpenForm(new FormJadwal());
+        }
+        private void pictureBoxMaskapai_Click(object sender, EventArgs e)
+        {
+            resetForeColor();
+            labelBandara.ForeColor = Color.Black;
+            OpenForm(new FormMaskapai());
+        }
+
+        private void pictureBoxStatus_Click_1(object sender, EventArgs e)
+        {
+            resetForeColor();
+            labelBandara.ForeColor = Color.Black;
             OpenForm(new FormStatus());
         }
     }

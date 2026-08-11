@@ -35,22 +35,22 @@
             label3 = new Label();
             dataGridView1 = new DataGridView();
             label2 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            comboBoxAsal = new ComboBox();
+            comboBoxTujuan = new ComboBox();
             label1 = new Label();
-            comboBox3 = new ComboBox();
-            textBox1 = new TextBox();
+            comboBoxMaskapai = new ComboBox();
+            textBoxNama = new TextBox();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            numericUpDown1 = new NumericUpDown();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            numericUpDownHargaTicket = new NumericUpDown();
+            textBoxWaktuBerangkat = new TextBox();
+            textBoxDurasi = new TextBox();
             label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHargaTicket).BeginInit();
             SuspendLayout();
             // 
             // buttonSimpan
@@ -76,18 +76,18 @@
             label5.AutoSize = true;
             label5.Location = new Point(11, 279);
             label5.Name = "label5";
-            label5.Size = new Size(31, 15);
+            label5.Size = new Size(44, 15);
             label5.TabIndex = 12;
-            label5.Text = "Kota";
+            label5.Text = "Tujuan";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(11, 250);
             label4.Name = "label4";
-            label4.Size = new Size(64, 15);
+            label4.Size = new Size(29, 15);
             label4.TabIndex = 13;
-            label4.Text = "Kode SATA";
+            label4.Text = "Asal";
             // 
             // label3
             // 
@@ -115,45 +115,45 @@
             label2.TabIndex = 10;
             label2.Text = "Semua Jadwal Penerbangan yang terdaftar ada disini";
             // 
-            // comboBox1
+            // comboBoxAsal
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(95, 247);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(161, 23);
-            comboBox1.TabIndex = 24;
+            comboBoxAsal.FormattingEnabled = true;
+            comboBoxAsal.Location = new Point(95, 247);
+            comboBoxAsal.Name = "comboBoxAsal";
+            comboBoxAsal.Size = new Size(161, 23);
+            comboBoxAsal.TabIndex = 24;
             // 
-            // comboBox2
+            // comboBoxTujuan
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(95, 276);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(161, 23);
-            comboBox2.TabIndex = 24;
+            comboBoxTujuan.FormattingEnabled = true;
+            comboBoxTujuan.Location = new Point(95, 276);
+            comboBoxTujuan.Name = "comboBoxTujuan";
+            comboBoxTujuan.Size = new Size(161, 23);
+            comboBoxTujuan.TabIndex = 24;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(11, 308);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(57, 15);
             label1.TabIndex = 12;
-            label1.Text = "Kota";
+            label1.Text = "Maskapai";
             // 
-            // comboBox3
+            // comboBoxMaskapai
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(95, 305);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(161, 23);
-            comboBox3.TabIndex = 24;
+            comboBoxMaskapai.FormattingEnabled = true;
+            comboBoxMaskapai.Location = new Point(95, 305);
+            comboBoxMaskapai.Name = "comboBoxMaskapai";
+            comboBoxMaskapai.Size = new Size(161, 23);
+            comboBoxMaskapai.TabIndex = 24;
             // 
-            // textBox1
+            // textBoxNama
             // 
-            textBox1.Location = new Point(95, 211);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(161, 23);
-            textBox1.TabIndex = 25;
+            textBoxNama.Location = new Point(95, 211);
+            textBoxNama.Name = "textBoxNama";
+            textBoxNama.Size = new Size(161, 23);
+            textBoxNama.TabIndex = 25;
             // 
             // label6
             // 
@@ -196,26 +196,26 @@
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 26;
             // 
-            // numericUpDown1
+            // numericUpDownHargaTicket
             // 
-            numericUpDown1.Location = new Point(357, 310);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 27;
+            numericUpDownHargaTicket.Location = new Point(357, 310);
+            numericUpDownHargaTicket.Name = "numericUpDownHargaTicket";
+            numericUpDownHargaTicket.Size = new Size(120, 23);
+            numericUpDownHargaTicket.TabIndex = 27;
             // 
-            // textBox2
+            // textBoxWaktuBerangkat
             // 
-            textBox2.Location = new Point(356, 247);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(161, 23);
-            textBox2.TabIndex = 25;
+            textBoxWaktuBerangkat.Location = new Point(356, 247);
+            textBoxWaktuBerangkat.Name = "textBoxWaktuBerangkat";
+            textBoxWaktuBerangkat.Size = new Size(161, 23);
+            textBoxWaktuBerangkat.TabIndex = 25;
             // 
-            // textBox3
+            // textBoxDurasi
             // 
-            textBox3.Location = new Point(356, 276);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(161, 23);
-            textBox3.TabIndex = 25;
+            textBoxDurasi.Location = new Point(356, 276);
+            textBoxDurasi.Name = "textBoxDurasi";
+            textBoxDurasi.Size = new Size(161, 23);
+            textBoxDurasi.TabIndex = 25;
             // 
             // label10
             // 
@@ -233,14 +233,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(592, 343);
             Controls.Add(label10);
-            Controls.Add(numericUpDown1);
+            Controls.Add(numericUpDownHargaTicket);
             Controls.Add(dateTimePicker1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(textBoxDurasi);
+            Controls.Add(textBoxWaktuBerangkat);
+            Controls.Add(textBoxNama);
+            Controls.Add(comboBoxMaskapai);
+            Controls.Add(comboBoxTujuan);
+            Controls.Add(comboBoxAsal);
             Controls.Add(buttonSimpan);
             Controls.Add(label9);
             Controls.Add(buttonBatal);
@@ -254,9 +254,10 @@
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Name = "FormJadwal";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FormJadwal";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownHargaTicket).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -270,19 +271,19 @@
         private Label label3;
         private DataGridView dataGridView1;
         private Label label2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxAsal;
+        private ComboBox comboBoxTujuan;
         private Label label1;
-        private ComboBox comboBox3;
-        private TextBox textBox1;
+        private ComboBox comboBoxMaskapai;
+        private TextBox textBoxNama;
         private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
         private DateTimePicker dateTimePicker1;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private NumericUpDown numericUpDownHargaTicket;
+        private TextBox textBoxWaktuBerangkat;
+        private TextBox textBoxDurasi;
         private Label label10;
     }
 }
