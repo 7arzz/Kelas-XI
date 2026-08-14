@@ -59,5 +59,26 @@ namespace ContohSoal1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_bromo {
+            get {
+                object obj = ResourceManager.GetObject("logo bromo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vector_Back_Icon__Back_Icons__Arrow__Back_PNG_and_Vector_with_Transparent_Background_for_Free_Download {
+            get {
+                object obj = ResourceManager.GetObject("Vector Back Icon, Back Icons, Arrow, Back PNG and Vector with Transparent Backgro" +
+                        "und for Free Download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

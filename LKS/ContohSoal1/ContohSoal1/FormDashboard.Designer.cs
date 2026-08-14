@@ -257,7 +257,7 @@
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel1);
             Name = "FormDashboard";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDashboard";
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
