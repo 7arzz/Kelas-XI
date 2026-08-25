@@ -152,6 +152,10 @@ namespace BromoSolutionEFADO.Master
             }
 
             string[] durasi = textBoxDurasi.Text.Split(' ');
+            int jam = Convert.ToInt32(durasi[0]);
+            int menit = Convert.ToInt32(durasi[2]);
+
+            int totalMenit = (jam * 60) + menit;
 
             if (durasi.Length != 4)
             {
@@ -171,7 +175,91 @@ namespace BromoSolutionEFADO.Master
                 return;
             }
 
-            MessageBox.Show("OK, data udah masuk");
+            if (idJadwal == -1)
+            {
+                JadwalPenerbangan jadwalBaru = new JadwalPenerbangan();
+
+                jadwalBaru.KodePenerbangan = textBoxKodePenerbangan.Text;
+                jadwalBaru.BandaraKeberangkatanID = Convert.ToInt32(comboBoxAsal.SelectedValue);
+                jadwalBaru.BandaraTujuanID = Convert.ToInt32(comboBoxTujuan.SelectedValue);
+                jadwalBaru.MaskapaiID = Convert.ToInt32(comboBoxMaskapai.SelectedValue);
+                jadwalBaru.TanggalKeberangkatan = dateTimePickerTanggal.Value;
+                jadwalBaru.WaktuKeberangkatan = dateTimePickerWaktuKeberangkatan.Value.TimeOfDay;
+                jadwalBaru.DurasiPenerbangan = totalMenit;
+
+                db.JadwalPenerbangans.Add(jadwalBaru);
+                db.SaveChanges();
+
+                MessageBox.Show("Data udah di simpan wok");
+                clearForm();
+                loadJadwal();
+            }
+            else
+            {
+                JadwalPenerbangan editJadwal = db.JadwalPenerbangans.Find(idJadwal);
+
+                editJadwal.KodePenerbangan = textBoxKodePenerbangan.Text;
+                editJadwal.BandaraKeberangkatanID = Convert.ToInt32(comboBoxAsal.SelectedValue);
+                editJadwal.BandaraTujuanID = Convert.ToInt32(comboBoxTujuan.SelectedValue);
+                editJadwal.MaskapaiID = Convert.ToInt32(comboBoxMaskapai.SelectedValue);
+                editJadwal.TanggalKeberangkatan = dateTimePickerTanggal.Value;
+                editJadwal.WaktuKeberangkatan = dateTimePickerWaktuKeberangkatan.Value.TimeOfDay;
+                editJadwal.DurasiPenerbangan = totalMenit;
+                editJadwal.HargaPerTiket = Convert.ToInt32(numericUpDownHargaTicket.Value);
+
+                MessageBox.Show("Oke, data udah di ubah");
+                clearForm();
+                loadJadwal();
+            }
+        }
+
+        private void dataGridViewJadwal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 )
+            {
+                return;  
+            }
+
+            if (dataGridViewJadwal.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                idJadwal = Convert.ToInt32(dataGridViewJadwal.Rows[e.RowIndex].Cells["ID"].Value);
+                JadwalPenerbangan editJadwal = new JadwalPenerbangan();
+
+                int jam = editJadwal.DurasiPenerbangan / 60;
+                int menit = editJadwal.DurasiPenerbangan - 60;
+
+                string menitKeDurasi = jam + " Jam " + menit + " Menit"; 
+
+                textBoxKodePenerbangan.Text = editJadwal.KodePenerbangan;
+                comboBoxAsal.SelectedValue = editJadwal.BandaraKeberangkatanID;
+                comboBoxTujuan.SelectedValue = editJadwal.BandaraTujuanID;
+                comboBoxMaskapai.SelectedValue = editJadwal.MaskapaiID;
+                dateTimePickerTanggal.Value = editJadwal.TanggalKeberangkatan;
+                dateTimePickerWaktuKeberangkatan.Value = DateTime.Today + editJadwal.WaktuKeberangkatan.Value;
+                textBoxDurasi.Text = menitKeDurasi;
+                numericUpDownHargaTicket.Value = Convert.ToInt32(editJadwal.HargaPerTiket);
+
+                buttonSimpan.Text = "Update";   
+            } 
+            else if (dataGridViewJadwal.Columns[e.ColumnIndex].Name == "Hapus")
+            {
+                int id = Convert.ToInt32(dataGridViewJadwal.Rows[e.RowIndex].Cells["ID"].Value);
+
+                var hasil = MessageBox.Show("Yakin di hapus wok?? ga bisa di balikin lhoo", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (hasil == DialogResult.Yes)
+                {
+                    JadwalPenerbangan hapusJadwal = db.JadwalPenerbangans.Find(id);
+                    db.JadwalPenerbangans.Remove(hapusJadwal);
+                    db.SaveChanges();
+
+                    loadJadwal();
+                    clearForm();
+
+                    MessageBox.Show("OK, udah di hapus");
+                }
+            }
         }
     }
 }
+    

@@ -135,6 +135,7 @@ namespace BromoSolutionEFADO.Master
             this.dataGridViewJadwal.Name = "dataGridViewJadwal";
             this.dataGridViewJadwal.Size = new System.Drawing.Size(502, 134);
             this.dataGridViewJadwal.TabIndex = 11;
+            this.dataGridViewJadwal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJadwal_CellClick);
             // 
             // ID
             // 
@@ -253,6 +254,7 @@ namespace BromoSolutionEFADO.Master
             this.textBoxKodePenerbangan.Name = "textBoxKodePenerbangan";
             this.textBoxKodePenerbangan.Size = new System.Drawing.Size(139, 20);
             this.textBoxKodePenerbangan.TabIndex = 25;
+            this.textBoxKodePenerbangan.Text = "AA-0000";
             // 
             // label6
             // 
@@ -298,6 +300,11 @@ namespace BromoSolutionEFADO.Master
             // numericUpDownHargaTicket
             // 
             this.numericUpDownHargaTicket.Location = new System.Drawing.Point(282, 269);
+            this.numericUpDownHargaTicket.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            0});
             this.numericUpDownHargaTicket.Name = "numericUpDownHargaTicket";
             this.numericUpDownHargaTicket.Size = new System.Drawing.Size(103, 20);
             this.numericUpDownHargaTicket.TabIndex = 27;
@@ -308,6 +315,7 @@ namespace BromoSolutionEFADO.Master
             this.textBoxDurasi.Name = "textBoxDurasi";
             this.textBoxDurasi.Size = new System.Drawing.Size(139, 20);
             this.textBoxDurasi.TabIndex = 25;
+            this.textBoxDurasi.Text = "__ Jam __ Menit";
             // 
             // label10
             // 
@@ -323,7 +331,7 @@ namespace BromoSolutionEFADO.Master
             // 
             this.dateTimePickerWaktuKeberangkatan.Location = new System.Drawing.Point(282, 211);
             this.dateTimePickerWaktuKeberangkatan.Name = "dateTimePickerWaktuKeberangkatan";
-            this.dateTimePickerWaktuKeberangkatan.Size = new System.Drawing.Size(172, 20);
+            this.dateTimePickerWaktuKeberangkatan.Size = new System.Drawing.Size(171, 20);
             this.dateTimePickerWaktuKeberangkatan.TabIndex = 26;
             // 
             // FormJadwal

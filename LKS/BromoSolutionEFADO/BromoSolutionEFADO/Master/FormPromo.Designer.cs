@@ -33,198 +33,199 @@ namespace BromoSolutionEFADO.Master
         /// </summary>
         private void InitializeComponent()
         {
-            label10 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBoxNama = new TextBox();
-            buttonSimpan = new Button();
-            buttonBatal = new Button();
-            label6 = new Label();
-            label3 = new Label();
-            dataGridView1 = new DataGridView();
-            label2 = new Label();
-            label1 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            label4 = new Label();
-            numericUpDown2 = new NumericUpDown();
-            label5 = new Label();
-            richTextBox1 = new RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            SuspendLayout();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePickerBerlaku = new System.Windows.Forms.DateTimePicker();
+            this.textBoxKode = new System.Windows.Forms.TextBox();
+            this.buttonSimpan = new System.Windows.Forms.Button();
+            this.buttonBatal = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridViewPromo = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownPersentaseDiskon = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDownMaxDiskon = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.richTextBoxDeskripsi = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPersentaseDiskon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxDiskon)).BeginInit();
+            this.SuspendLayout();
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(3, 4);
-            label10.Name = "label10";
-            label10.Size = new Size(216, 25);
-            label10.TabIndex = 49;
-            label10.Text = "MASTER KODE PROMO";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(216, 25);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "MASTER KODE PROMO";
             // 
-            // dateTimePicker1
+            // dateTimePickerBerlaku
             // 
-            dateTimePicker1.Location = new Point(105, 246);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 47;
+            this.dateTimePickerBerlaku.Location = new System.Drawing.Point(94, 213);
+            this.dateTimePickerBerlaku.Name = "dateTimePickerBerlaku";
+            this.dateTimePickerBerlaku.Size = new System.Drawing.Size(172, 20);
+            this.dateTimePickerBerlaku.TabIndex = 47;
             // 
-            // textBoxNama
+            // textBoxKode
             // 
-            textBoxNama.Location = new Point(95, 217);
-            textBoxNama.Name = "textBoxNama";
-            textBoxNama.Size = new Size(161, 23);
-            textBoxNama.TabIndex = 46;
+            this.textBoxKode.Location = new System.Drawing.Point(81, 188);
+            this.textBoxKode.Name = "textBoxKode";
+            this.textBoxKode.Size = new System.Drawing.Size(139, 20);
+            this.textBoxKode.TabIndex = 46;
             // 
             // buttonSimpan
             // 
-            buttonSimpan.Location = new Point(324, 306);
-            buttonSimpan.Name = "buttonSimpan";
-            buttonSimpan.Size = new Size(84, 33);
-            buttonSimpan.TabIndex = 39;
-            buttonSimpan.Text = "Simpan";
-            buttonSimpan.UseVisualStyleBackColor = true;
+            this.buttonSimpan.Location = new System.Drawing.Point(310, 265);
+            this.buttonSimpan.Name = "buttonSimpan";
+            this.buttonSimpan.Size = new System.Drawing.Size(72, 29);
+            this.buttonSimpan.TabIndex = 39;
+            this.buttonSimpan.Text = "Simpan";
+            this.buttonSimpan.UseVisualStyleBackColor = true;
             // 
             // buttonBatal
             // 
-            buttonBatal.Location = new Point(428, 306);
-            buttonBatal.Name = "buttonBatal";
-            buttonBatal.Size = new Size(78, 33);
-            buttonBatal.TabIndex = 40;
-            buttonBatal.Text = "Batal";
-            buttonBatal.UseVisualStyleBackColor = true;
+            this.buttonBatal.Location = new System.Drawing.Point(399, 265);
+            this.buttonBatal.Name = "buttonBatal";
+            this.buttonBatal.Size = new System.Drawing.Size(67, 29);
+            this.buttonBatal.TabIndex = 40;
+            this.buttonBatal.Text = "Batal";
+            this.buttonBatal.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(11, 252);
-            label6.Name = "label6";
-            label6.Size = new Size(88, 15);
-            label6.TabIndex = 37;
-            label6.Text = "Berlaku Sampai";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Berlaku Sampai";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(11, 221);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 15);
-            label3.TabIndex = 38;
-            label3.Text = "Kode Promo";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Kode Promo";
             // 
-            // dataGridView1
+            // dataGridViewPromo
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 50);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(586, 155);
-            dataGridView1.TabIndex = 30;
+            this.dataGridViewPromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPromo.Location = new System.Drawing.Point(3, 43);
+            this.dataGridViewPromo.Name = "dataGridViewPromo";
+            this.dataGridViewPromo.Size = new System.Drawing.Size(502, 134);
+            this.dataGridViewPromo.TabIndex = 30;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(11, 29);
-            label2.Name = "label2";
-            label2.Size = new Size(242, 15);
-            label2.TabIndex = 29;
-            label2.Text = "Semua Kode Promo yang terdaftar ada disini";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(216, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Semua Kode Promo yang terdaftar ada disini";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(11, 283);
-            label1.Name = "label1";
-            label1.Size = new Size(102, 15);
-            label1.TabIndex = 38;
-            label1.Text = "Persentase Diskon";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Persentase Diskon";
             // 
-            // numericUpDown1
+            // numericUpDownPersentaseDiskon
             // 
-            numericUpDown1.Location = new Point(119, 281);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 50;
+            this.numericUpDownPersentaseDiskon.Location = new System.Drawing.Point(109, 244);
+            this.numericUpDownPersentaseDiskon.Name = "numericUpDownPersentaseDiskon";
+            this.numericUpDownPersentaseDiskon.Size = new System.Drawing.Size(103, 20);
+            this.numericUpDownPersentaseDiskon.TabIndex = 50;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 314);
-            label4.Name = "label4";
-            label4.Size = new Size(106, 15);
-            label4.TabIndex = 38;
-            label4.Text = "Maksimum Diskon";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Maksimum Diskon";
             // 
-            // numericUpDown2
+            // numericUpDownMaxDiskon
             // 
-            numericUpDown2.Location = new Point(119, 312);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
-            numericUpDown2.TabIndex = 50;
+            this.numericUpDownMaxDiskon.Location = new System.Drawing.Point(109, 270);
+            this.numericUpDownMaxDiskon.Name = "numericUpDownMaxDiskon";
+            this.numericUpDownMaxDiskon.Size = new System.Drawing.Size(103, 20);
+            this.numericUpDownMaxDiskon.TabIndex = 50;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(324, 221);
-            label5.Name = "label5";
-            label5.Size = new Size(54, 15);
-            label5.TabIndex = 38;
-            label5.Text = "Deskripsi";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(310, 192);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Deskripsi";
             // 
-            // richTextBox1
+            // richTextBoxDeskripsi
             // 
-            richTextBox1.Location = new Point(324, 243);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(193, 61);
-            richTextBox1.TabIndex = 51;
-            richTextBox1.Text = "";
+            this.richTextBoxDeskripsi.Location = new System.Drawing.Point(310, 211);
+            this.richTextBoxDeskripsi.Name = "richTextBoxDeskripsi";
+            this.richTextBoxDeskripsi.Size = new System.Drawing.Size(166, 53);
+            this.richTextBoxDeskripsi.TabIndex = 51;
+            this.richTextBoxDeskripsi.Text = "";
             // 
             // FormPromo
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(592, 343);
-            Controls.Add(richTextBox1);
-            Controls.Add(numericUpDown2);
-            Controls.Add(numericUpDown1);
-            Controls.Add(label10);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBoxNama);
-            Controls.Add(buttonSimpan);
-            Controls.Add(label4);
-            Controls.Add(buttonBatal);
-            Controls.Add(label1);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label3);
-            Controls.Add(dataGridView1);
-            Controls.Add(label2);
-            Name = "FormPromo";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "FormPromo";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(507, 297);
+            this.Controls.Add(this.richTextBoxDeskripsi);
+            this.Controls.Add(this.numericUpDownMaxDiskon);
+            this.Controls.Add(this.numericUpDownPersentaseDiskon);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dateTimePickerBerlaku);
+            this.Controls.Add(this.textBoxKode);
+            this.Controls.Add(this.buttonSimpan);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonBatal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridViewPromo);
+            this.Controls.Add(this.label2);
+            this.Name = "FormPromo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "FormPromo";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPersentaseDiskon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxDiskon)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Label label10;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBoxNama;
+        private DateTimePicker dateTimePickerBerlaku;
+        private TextBox textBoxKode;
         private Button buttonSimpan;
         private Button buttonBatal;
         private Label label6;
         private Label label3;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewPromo;
         private Label label2;
         private Label label1;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownPersentaseDiskon;
         private Label label4;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown numericUpDownMaxDiskon;
         private Label label5;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxDeskripsi;
     }
 }

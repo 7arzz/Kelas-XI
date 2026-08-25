@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BromoSolutionEFADO.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,5 +15,9 @@ namespace BromoSolutionEFADO.Master
         {
             InitializeComponent();
         }
+
+        BandaraEntities db = new BandaraEntities();
+
+
     }
 }
