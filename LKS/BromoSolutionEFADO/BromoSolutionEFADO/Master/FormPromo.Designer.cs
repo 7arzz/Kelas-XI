@@ -48,6 +48,14 @@ namespace BromoSolutionEFADO.Master
             this.numericUpDownMaxDiskon = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.richTextBoxDeskripsi = new System.Windows.Forms.RichTextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersentaseDiskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaxDiskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BerlakuSampai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Deskripsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Hapus = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPersentaseDiskon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxDiskon)).BeginInit();
@@ -67,7 +75,7 @@ namespace BromoSolutionEFADO.Master
             // 
             this.dateTimePickerBerlaku.Location = new System.Drawing.Point(94, 213);
             this.dateTimePickerBerlaku.Name = "dateTimePickerBerlaku";
-            this.dateTimePickerBerlaku.Size = new System.Drawing.Size(172, 20);
+            this.dateTimePickerBerlaku.Size = new System.Drawing.Size(186, 20);
             this.dateTimePickerBerlaku.TabIndex = 47;
             // 
             // textBoxKode
@@ -76,6 +84,7 @@ namespace BromoSolutionEFADO.Master
             this.textBoxKode.Name = "textBoxKode";
             this.textBoxKode.Size = new System.Drawing.Size(139, 20);
             this.textBoxKode.TabIndex = 46;
+            this.textBoxKode.TextChanged += new System.EventHandler(this.textBoxKode_TextChanged);
             // 
             // buttonSimpan
             // 
@@ -85,6 +94,7 @@ namespace BromoSolutionEFADO.Master
             this.buttonSimpan.TabIndex = 39;
             this.buttonSimpan.Text = "Simpan";
             this.buttonSimpan.UseVisualStyleBackColor = true;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // buttonBatal
             // 
@@ -116,10 +126,20 @@ namespace BromoSolutionEFADO.Master
             // dataGridViewPromo
             // 
             this.dataGridViewPromo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPromo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Kode,
+            this.PersentaseDiskon,
+            this.MaxDiskon,
+            this.BerlakuSampai,
+            this.Deskripsi,
+            this.Edit,
+            this.Hapus});
             this.dataGridViewPromo.Location = new System.Drawing.Point(3, 43);
             this.dataGridViewPromo.Name = "dataGridViewPromo";
             this.dataGridViewPromo.Size = new System.Drawing.Size(502, 134);
             this.dataGridViewPromo.TabIndex = 30;
+            this.dataGridViewPromo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPromo_CellClick);
             // 
             // label2
             // 
@@ -158,6 +178,11 @@ namespace BromoSolutionEFADO.Master
             // numericUpDownMaxDiskon
             // 
             this.numericUpDownMaxDiskon.Location = new System.Drawing.Point(109, 270);
+            this.numericUpDownMaxDiskon.Maximum = new decimal(new int[] {
+            -402653185,
+            -1613725636,
+            54210108,
+            0});
             this.numericUpDownMaxDiskon.Name = "numericUpDownMaxDiskon";
             this.numericUpDownMaxDiskon.Size = new System.Drawing.Size(103, 20);
             this.numericUpDownMaxDiskon.TabIndex = 50;
@@ -178,6 +203,57 @@ namespace BromoSolutionEFADO.Master
             this.richTextBoxDeskripsi.Size = new System.Drawing.Size(166, 53);
             this.richTextBoxDeskripsi.TabIndex = 51;
             this.richTextBoxDeskripsi.Text = "";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // Kode
+            // 
+            this.Kode.DataPropertyName = "Kode";
+            this.Kode.HeaderText = "Kode";
+            this.Kode.Name = "Kode";
+            // 
+            // PersentaseDiskon
+            // 
+            this.PersentaseDiskon.DataPropertyName = "PersentaseDiskon";
+            this.PersentaseDiskon.HeaderText = "Persentase Diskon";
+            this.PersentaseDiskon.Name = "PersentaseDiskon";
+            // 
+            // MaxDiskon
+            // 
+            this.MaxDiskon.DataPropertyName = "MaksimumDiskon";
+            this.MaxDiskon.HeaderText = "Max Diskon";
+            this.MaxDiskon.Name = "MaxDiskon";
+            // 
+            // BerlakuSampai
+            // 
+            this.BerlakuSampai.DataPropertyName = "BerlakuSampai";
+            this.BerlakuSampai.HeaderText = "Berlaku Sampai";
+            this.BerlakuSampai.Name = "BerlakuSampai";
+            // 
+            // Deskripsi
+            // 
+            this.Deskripsi.DataPropertyName = "Deskripsi";
+            this.Deskripsi.HeaderText = "Deskripsi";
+            this.Deskripsi.Name = "Deskripsi";
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Text = "Edit";
+            // 
+            // Hapus
+            // 
+            this.Hapus.HeaderText = "Hapus";
+            this.Hapus.Name = "Hapus";
             // 
             // FormPromo
             // 
@@ -202,6 +278,7 @@ namespace BromoSolutionEFADO.Master
             this.Name = "FormPromo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormPromo";
+            this.Load += new System.EventHandler(this.FormPromo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPromo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPersentaseDiskon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxDiskon)).EndInit();
@@ -227,5 +304,13 @@ namespace BromoSolutionEFADO.Master
         private NumericUpDown numericUpDownMaxDiskon;
         private Label label5;
         private RichTextBox richTextBoxDeskripsi;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Kode;
+        private DataGridViewTextBoxColumn PersentaseDiskon;
+        private DataGridViewTextBoxColumn MaxDiskon;
+        private DataGridViewTextBoxColumn BerlakuSampai;
+        private DataGridViewTextBoxColumn Deskripsi;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Hapus;
     }
 }
