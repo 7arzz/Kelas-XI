@@ -87,6 +87,7 @@ namespace BromoSolutionEFADO.Master
                 tambahPromo.BerlakuSampai = dateTimePickerBerlaku.Value;
                 tambahPromo.PersentaseDiskon = Convert.ToInt32(numericUpDownPersentaseDiskon.Value);
                 tambahPromo.MaksimumDiskon = Convert.ToInt32(numericUpDownMaxDiskon.Value);
+                tambahPromo.Deskripsi = richTextBoxDeskripsi.Text;
 
                 db.KodePromoes.Add(tambahPromo);
                 db.SaveChanges();
@@ -106,6 +107,8 @@ namespace BromoSolutionEFADO.Master
                 editPromo.PersentaseDiskon = Convert.ToInt32(numericUpDownPersentaseDiskon.Value);
                 editPromo.MaksimumDiskon = Convert.ToInt32(numericUpDownMaxDiskon.Value);
                 editPromo.Deskripsi = richTextBoxDeskripsi.Text;
+
+                db.SaveChanges();
 
                 MessageBox.Show("Promo sudah di edit wokk");
             }

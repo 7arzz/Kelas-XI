@@ -38,24 +38,34 @@ namespace ContohSoal1.Customer
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonFilter = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxWaktu3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxWaktu4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxWaktu2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxWaktu1 = new System.Windows.Forms.CheckBox();
+            this.dataGridViewListPenerbangan = new System.Windows.Forms.DataGridView();
+            this.labelKeberangkatan = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelTujuan = new System.Windows.Forms.Label();
+            this.labelTanggal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelPenumpang = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KodePenerbangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maskapai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BandaraKeberangkatan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BandaraTujuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tanggal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JamBerangkat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BeliTiket = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPenerbangan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,13 +94,13 @@ namespace ContohSoal1.Customer
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttonFilter);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.comboBoxSort);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.checkBoxWaktu3);
+            this.groupBox2.Controls.Add(this.checkBoxWaktu4);
+            this.groupBox2.Controls.Add(this.checkBoxWaktu2);
+            this.groupBox2.Controls.Add(this.checkBoxWaktu1);
             this.groupBox2.Location = new System.Drawing.Point(6, 61);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(828, 151);
@@ -106,14 +116,22 @@ namespace ContohSoal1.Customer
             this.buttonFilter.TabIndex = 3;
             this.buttonFilter.Text = "Terapkan Filter";
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
-            // comboBox1
+            // comboBoxSort
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Items.AddRange(new object[] {
+            "Harga terendah",
+            "Keberangakatan paling awal ",
+            "Keberangkatan paling akhir",
+            "Kedatangan paling awal",
+            "Kedatangan paling akhir",
+            "Durasi tercepat"});
+            this.comboBoxSort.Location = new System.Drawing.Point(18, 124);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(160, 21);
+            this.comboBoxSort.TabIndex = 2;
             // 
             // label3
             // 
@@ -133,62 +151,73 @@ namespace ContohSoal1.Customer
             this.label2.TabIndex = 1;
             this.label2.Text = "Waktu Penerbangan";
             // 
-            // checkBox4
+            // checkBoxWaktu3
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(213, 40);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(89, 17);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "12.00 - 18.00";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxWaktu3.AutoSize = true;
+            this.checkBoxWaktu3.Location = new System.Drawing.Point(213, 40);
+            this.checkBoxWaktu3.Name = "checkBoxWaktu3";
+            this.checkBoxWaktu3.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxWaktu3.TabIndex = 0;
+            this.checkBoxWaktu3.Text = "12.00 - 18.00";
+            this.checkBoxWaktu3.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxWaktu4
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(309, 40);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(89, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "18.00 - 00.00";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxWaktu4.AutoSize = true;
+            this.checkBoxWaktu4.Location = new System.Drawing.Point(309, 40);
+            this.checkBoxWaktu4.Name = "checkBoxWaktu4";
+            this.checkBoxWaktu4.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxWaktu4.TabIndex = 0;
+            this.checkBoxWaktu4.Text = "18.00 - 00.00";
+            this.checkBoxWaktu4.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxWaktu2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(121, 40);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(89, 17);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "06.00 - 12.00";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxWaktu2.AutoSize = true;
+            this.checkBoxWaktu2.Location = new System.Drawing.Point(121, 40);
+            this.checkBoxWaktu2.Name = "checkBoxWaktu2";
+            this.checkBoxWaktu2.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxWaktu2.TabIndex = 0;
+            this.checkBoxWaktu2.Text = "06.00 - 12.00";
+            this.checkBoxWaktu2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxWaktu1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(29, 40);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "00.00 - 06.00";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxWaktu1.AutoSize = true;
+            this.checkBoxWaktu1.Location = new System.Drawing.Point(29, 40);
+            this.checkBoxWaktu1.Name = "checkBoxWaktu1";
+            this.checkBoxWaktu1.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxWaktu1.TabIndex = 0;
+            this.checkBoxWaktu1.Text = "00.00 - 06.00";
+            this.checkBoxWaktu1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewListPenerbangan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-3, 217);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(851, 237);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewListPenerbangan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListPenerbangan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.KodePenerbangan,
+            this.Maskapai,
+            this.BandaraKeberangkatan,
+            this.BandaraTujuan,
+            this.Harga,
+            this.Tanggal,
+            this.JamBerangkat,
+            this.BeliTiket});
+            this.dataGridViewListPenerbangan.Location = new System.Drawing.Point(-3, 217);
+            this.dataGridViewListPenerbangan.Name = "dataGridViewListPenerbangan";
+            this.dataGridViewListPenerbangan.Size = new System.Drawing.Size(851, 237);
+            this.dataGridViewListPenerbangan.TabIndex = 5;
+            this.dataGridViewListPenerbangan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label4
+            // labelKeberangkatan
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "bandara A (BAA)";
+            this.labelKeberangkatan.AutoSize = true;
+            this.labelKeberangkatan.Location = new System.Drawing.Point(57, 35);
+            this.labelKeberangkatan.Name = "labelKeberangkatan";
+            this.labelKeberangkatan.Size = new System.Drawing.Size(86, 13);
+            this.labelKeberangkatan.TabIndex = 1;
+            this.labelKeberangkatan.Text = "bandara A (BAA)";
             // 
             // pictureBox1
             // 
@@ -199,34 +228,35 @@ namespace ContohSoal1.Customer
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(170, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(157, 29);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // labelTujuan
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(204, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "bandara A (BAA)";
+            this.labelTujuan.AutoSize = true;
+            this.labelTujuan.Location = new System.Drawing.Point(204, 35);
+            this.labelTujuan.Name = "labelTujuan";
+            this.labelTujuan.Size = new System.Drawing.Size(86, 13);
+            this.labelTujuan.TabIndex = 1;
+            this.labelTujuan.Text = "bandara A (BAA)";
             // 
-            // label6
+            // labelTanggal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(311, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Wed, 20 mei 2026";
+            this.labelTanggal.AutoSize = true;
+            this.labelTanggal.Location = new System.Drawing.Point(322, 35);
+            this.labelTanggal.Name = "labelTanggal";
+            this.labelTanggal.Size = new System.Drawing.Size(94, 13);
+            this.labelTanggal.TabIndex = 1;
+            this.labelTanggal.Text = "Wed, 20 mei 2026";
             // 
             // label7
             // 
@@ -240,7 +270,7 @@ namespace ContohSoal1.Customer
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(286, 34);
+            this.pictureBox3.Location = new System.Drawing.Point(297, 34);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(21, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -250,12 +280,78 @@ namespace ContohSoal1.Customer
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(395, 33);
+            this.pictureBox4.Location = new System.Drawing.Point(437, 35);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 16);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
+            // 
+            // labelPenumpang
+            // 
+            this.labelPenumpang.AutoSize = true;
+            this.labelPenumpang.Location = new System.Drawing.Point(479, 36);
+            this.labelPenumpang.Name = "labelPenumpang";
+            this.labelPenumpang.Size = new System.Drawing.Size(72, 13);
+            this.labelPenumpang.TabIndex = 1;
+            this.labelPenumpang.Text = "0 penumpang";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // KodePenerbangan
+            // 
+            this.KodePenerbangan.DataPropertyName = "KodePenerbangan";
+            this.KodePenerbangan.HeaderText = "Kode Penerbangan";
+            this.KodePenerbangan.Name = "KodePenerbangan";
+            // 
+            // Maskapai
+            // 
+            this.Maskapai.DataPropertyName = "Maskapai";
+            this.Maskapai.HeaderText = "Maskapai";
+            this.Maskapai.Name = "Maskapai";
+            // 
+            // BandaraKeberangkatan
+            // 
+            this.BandaraKeberangkatan.DataPropertyName = "BandaraKeberangkatan";
+            this.BandaraKeberangkatan.HeaderText = "Bandara Keberangkatan";
+            this.BandaraKeberangkatan.Name = "BandaraKeberangkatan";
+            // 
+            // BandaraTujuan
+            // 
+            this.BandaraTujuan.DataPropertyName = "BandaraTujuan";
+            this.BandaraTujuan.HeaderText = "Bandara Tujuan";
+            this.BandaraTujuan.Name = "BandaraTujuan";
+            // 
+            // Harga
+            // 
+            this.Harga.DataPropertyName = "HargaPerTiket";
+            this.Harga.HeaderText = "Harga";
+            this.Harga.Name = "Harga";
+            // 
+            // Tanggal
+            // 
+            this.Tanggal.DataPropertyName = "Tanggal";
+            this.Tanggal.HeaderText = "Tanggal";
+            this.Tanggal.Name = "Tanggal";
+            // 
+            // JamBerangkat
+            // 
+            this.JamBerangkat.DataPropertyName = "JamBerangkat";
+            this.JamBerangkat.HeaderText = "Jam Keberangaktan";
+            this.JamBerangkat.Name = "JamBerangkat";
+            // 
+            // BeliTiket
+            // 
+            this.BeliTiket.HeaderText = "Beli Tiket";
+            this.BeliTiket.Name = "BeliTiket";
+            this.BeliTiket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BeliTiket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BeliTiket.Text = "Beli Tiket";
             // 
             // FormListPenerbangan
             // 
@@ -266,19 +362,21 @@ namespace ContohSoal1.Customer
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewListPenerbangan);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelPenumpang);
+            this.Controls.Add(this.labelTanggal);
+            this.Controls.Add(this.labelTujuan);
+            this.Controls.Add(this.labelKeberangkatan);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormListPenerbangan";
             this.Text = "FormListPenerbangan";
+            this.Load += new System.EventHandler(this.FormListPenerbangan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPenerbangan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -293,22 +391,32 @@ namespace ContohSoal1.Customer
         private GroupBox groupBox1;
         private Label label1;
         private GroupBox groupBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewListPenerbangan;
         private Label label2;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxWaktu1;
         private Button buttonFilter;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxSort;
         private Label label3;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private Label label4;
+        private CheckBox checkBoxWaktu3;
+        private CheckBox checkBoxWaktu4;
+        private CheckBox checkBoxWaktu2;
+        private Label labelKeberangkatan;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label5;
-        private Label label6;
+        private Label labelTujuan;
+        private Label labelTanggal;
         private Label label7;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private Label labelPenumpang;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn KodePenerbangan;
+        private DataGridViewTextBoxColumn Maskapai;
+        private DataGridViewTextBoxColumn BandaraKeberangkatan;
+        private DataGridViewTextBoxColumn BandaraTujuan;
+        private DataGridViewTextBoxColumn Harga;
+        private DataGridViewTextBoxColumn Tanggal;
+        private DataGridViewTextBoxColumn JamBerangkat;
+        private DataGridViewButtonColumn BeliTiket;
     }
 }

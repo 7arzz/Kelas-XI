@@ -134,7 +134,6 @@ namespace BromoSolutionEFADO.Master
                 editBandara.JumlahTerminal = Convert.ToInt32(numericUpDownTerminal.Value);
                 editBandara.Alamat = richTextBoxAlamat.Text;
 
-                db.Bandaras.Add(editBandara);
                 MessageBox.Show("Oke, bandara lu udah di edit wok");
             }
             db.SaveChanges();

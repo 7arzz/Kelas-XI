@@ -27,7 +27,6 @@ namespace BromoSolutionEFADO.Model
     
         public virtual DbSet<Akun> Akuns { get; set; }
         public virtual DbSet<Bandara> Bandaras { get; set; }
-        public virtual DbSet<JadwalPenerbangan> JadwalPenerbangans { get; set; }
         public virtual DbSet<KodePromo> KodePromoes { get; set; }
         public virtual DbSet<Maskapai> Maskapais { get; set; }
         public virtual DbSet<Negara> Negaras { get; set; }
@@ -35,5 +34,6 @@ namespace BromoSolutionEFADO.Model
         public virtual DbSet<StatusPenerbangan> StatusPenerbangans { get; set; }
         public virtual DbSet<TransaksiDetail> TransaksiDetails { get; set; }
         public virtual DbSet<TransaksiHeader> TransaksiHeaders { get; set; }
+        public virtual DbSet<JadwalPenerbangan> JadwalPenerbangans { get; set; }
     }
 }

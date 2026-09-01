@@ -74,6 +74,7 @@ namespace BromoSolutionEFADO.Customers
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -249,6 +250,7 @@ namespace BromoSolutionEFADO.Customers
             this.buttonPembayaran.TabIndex = 9;
             this.buttonPembayaran.Text = "Konfirmasi Pembayaran";
             this.buttonPembayaran.UseVisualStyleBackColor = true;
+            this.buttonPembayaran.Click += new System.EventHandler(this.buttonPembayaran_Click);
             // 
             // label7
             // 
@@ -322,6 +324,7 @@ namespace BromoSolutionEFADO.Customers
             this.Controls.Add(this.label4);
             this.Name = "FormBeliTiket";
             this.Text = "FormTiketSaya";
+            this.Load += new System.EventHandler(this.FormBeliTiket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

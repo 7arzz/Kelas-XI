@@ -14,5 +14,13 @@ namespace BromoSolutionEFADO.Customers
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FormMain main = new FormMain();
+            main.Show();
+
+            this.Close();
+        }
     }
 }

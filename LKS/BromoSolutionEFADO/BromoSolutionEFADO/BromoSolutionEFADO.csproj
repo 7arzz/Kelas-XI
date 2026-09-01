@@ -208,6 +208,7 @@
     <!-- ========================= -->
     <!-- RESOURCES - CUSTOMER -->
     <!-- ========================= -->
+    <Compile Include="Session.cs" />
     <EmbeddedResource Include="Customers\FormBeliTiket.resx">
       <DependentUpon>FormBeliTiket.cs</DependentUpon>
     </EmbeddedResource>

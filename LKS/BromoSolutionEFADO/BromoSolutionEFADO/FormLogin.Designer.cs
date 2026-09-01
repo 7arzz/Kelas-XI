@@ -32,129 +32,129 @@ namespace BromoSolutionEFADO
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            labelUsn = new Label();
-            textBoxUsn = new TextBox();
-            buttonLogin = new Button();
-            textBoxPassword = new TextBox();
-            labelPassword = new Label();
-            labelRegister = new Label();
-            linkLabelDatar = new LinkLabel();
-            pictureBox1 = new PictureBox();
-            labelLogin = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.labelUsn = new System.Windows.Forms.Label();
+            this.textBoxUsn = new System.Windows.Forms.TextBox();
+            this.buttonLogin = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelRegister = new System.Windows.Forms.Label();
+            this.linkLabelDatar = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelLogin = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // labelUsn
             // 
-            labelUsn.AutoSize = true;
-            labelUsn.Font = new Font("Segoe UI", 12F);
-            labelUsn.Location = new Point(239, 240);
-            labelUsn.Name = "labelUsn";
-            labelUsn.Size = new Size(88, 21);
-            labelUsn.TabIndex = 0;
-            labelUsn.Text = "Username :";
+            this.labelUsn.AutoSize = true;
+            this.labelUsn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelUsn.Location = new System.Drawing.Point(205, 208);
+            this.labelUsn.Name = "labelUsn";
+            this.labelUsn.Size = new System.Drawing.Size(88, 21);
+            this.labelUsn.TabIndex = 0;
+            this.labelUsn.Text = "Username :";
             // 
             // textBoxUsn
             // 
-            textBoxUsn.Font = new Font("Segoe UI", 12F);
-            textBoxUsn.Location = new Point(346, 238);
-            textBoxUsn.Name = "textBoxUsn";
-            textBoxUsn.Size = new Size(221, 29);
-            textBoxUsn.TabIndex = 1;
+            this.textBoxUsn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxUsn.Location = new System.Drawing.Point(297, 206);
+            this.textBoxUsn.Name = "textBoxUsn";
+            this.textBoxUsn.Size = new System.Drawing.Size(190, 29);
+            this.textBoxUsn.TabIndex = 1;
             // 
             // buttonLogin
             // 
-            buttonLogin.BackColor = SystemColors.ActiveCaption;
-            buttonLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            buttonLogin.ForeColor = Color.Cornsilk;
-            buttonLogin.Location = new Point(233, 325);
-            buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(334, 36);
-            buttonLogin.TabIndex = 2;
-            buttonLogin.Text = "Login";
-            buttonLogin.UseVisualStyleBackColor = false;
-            buttonLogin.Click += buttonLogin_Click;
+            this.buttonLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.ForeColor = System.Drawing.Color.Cornsilk;
+            this.buttonLogin.Location = new System.Drawing.Point(200, 282);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(286, 42);
+            this.buttonLogin.TabIndex = 2;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Font = new Font("Segoe UI", 12F);
-            textBoxPassword.Location = new Point(346, 273);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(221, 29);
-            textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxPassword.Location = new System.Drawing.Point(297, 237);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(190, 29);
+            this.textBoxPassword.TabIndex = 4;
             // 
             // labelPassword
             // 
-            labelPassword.AutoSize = true;
-            labelPassword.Font = new Font("Segoe UI", 12F);
-            labelPassword.Location = new Point(239, 275);
-            labelPassword.Name = "labelPassword";
-            labelPassword.Size = new Size(83, 21);
-            labelPassword.TabIndex = 3;
-            labelPassword.Text = "Password :";
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelPassword.Location = new System.Drawing.Point(205, 238);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(83, 21);
+            this.labelPassword.TabIndex = 3;
+            this.labelPassword.Text = "Password :";
             // 
             // labelRegister
             // 
-            labelRegister.AutoSize = true;
-            labelRegister.Font = new Font("Segoe UI", 9F);
-            labelRegister.Location = new Point(281, 377);
-            labelRegister.Name = "labelRegister";
-            labelRegister.Size = new Size(118, 15);
-            labelRegister.TabIndex = 5;
-            labelRegister.Text = "Belum Punya Akun??";
+            this.labelRegister.AutoSize = true;
+            this.labelRegister.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelRegister.Location = new System.Drawing.Point(241, 327);
+            this.labelRegister.Name = "labelRegister";
+            this.labelRegister.Size = new System.Drawing.Size(118, 15);
+            this.labelRegister.TabIndex = 5;
+            this.labelRegister.Text = "Belum Punya Akun??";
             // 
             // linkLabelDatar
             // 
-            linkLabelDatar.AutoSize = true;
-            linkLabelDatar.LinkColor = Color.DarkTurquoise;
-            linkLabelDatar.Location = new Point(405, 377);
-            linkLabelDatar.Name = "linkLabelDatar";
-            linkLabelDatar.Size = new Size(90, 15);
-            linkLabelDatar.TabIndex = 7;
-            linkLabelDatar.TabStop = true;
-            linkLabelDatar.Text = "Daftar Sekarang";
-            linkLabelDatar.LinkClicked += linkLabelDatar_LinkClicked;
+            this.linkLabelDatar.AutoSize = true;
+            this.linkLabelDatar.LinkColor = System.Drawing.Color.DarkTurquoise;
+            this.linkLabelDatar.Location = new System.Drawing.Point(347, 327);
+            this.linkLabelDatar.Name = "linkLabelDatar";
+            this.linkLabelDatar.Size = new System.Drawing.Size(85, 13);
+            this.linkLabelDatar.TabIndex = 7;
+            this.linkLabelDatar.TabStop = true;
+            this.linkLabelDatar.Text = "Daftar Sekarang";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(313, 51);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(174, 159);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(268, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // labelLogin
             // 
-            labelLogin.AutoSize = true;
-            labelLogin.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
-            labelLogin.Location = new Point(359, 9);
-            labelLogin.Name = "labelLogin";
-            labelLogin.Size = new Size(83, 31);
-            labelLogin.TabIndex = 9;
-            labelLogin.Text = "LOGIN";
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold);
+            this.labelLogin.Location = new System.Drawing.Point(308, 8);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(83, 31);
+            this.labelLogin.TabIndex = 9;
+            this.labelLogin.Text = "LOGIN";
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(labelLogin);
-            Controls.Add(pictureBox1);
-            Controls.Add(linkLabelDatar);
-            Controls.Add(labelRegister);
-            Controls.Add(textBoxPassword);
-            Controls.Add(labelPassword);
-            Controls.Add(buttonLogin);
-            Controls.Add(textBoxUsn);
-            Controls.Add(labelUsn);
-            Name = "FormLogin";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Login Form";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.labelLogin);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.linkLabelDatar);
+            this.Controls.Add(this.labelRegister);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.textBoxUsn);
+            this.Controls.Add(this.labelUsn);
+            this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Login Form";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

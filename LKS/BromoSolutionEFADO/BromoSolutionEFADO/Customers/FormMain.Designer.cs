@@ -35,67 +35,69 @@ namespace BromoSolutionEFADO.Customers
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPromo = new System.Windows.Forms.PictureBox();
+            this.logoutButton = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTiket = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelWelcome = new System.Windows.Forms.Label();
             this.labelNamaAkun = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBoxMaskapai = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBerangkat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxTujuan = new System.Windows.Forms.TextBox();
             this.pictureBoxJadwal = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTanggalBerangkat = new System.Windows.Forms.DateTimePicker();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPenumpang = new System.Windows.Forms.NumericUpDown();
             this.buttonCariPenerbangan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPromo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTiket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaskapai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJadwal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPenumpang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBoxPromo);
+            this.panel1.Controls.Add(this.logoutButton);
+            this.panel1.Controls.Add(this.pictureBoxTiket);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(849, 91);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBox7
+            // logoutButton
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(795, 32);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 29);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 24;
-            this.pictureBox7.TabStop = false;
+            this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
+            this.logoutButton.Location = new System.Drawing.Point(795, 32);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(28, 29);
+            this.logoutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoutButton.TabIndex = 24;
+            this.logoutButton.TabStop = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // pictureBoxPromo
+            // pictureBoxTiket
             // 
-            this.pictureBoxPromo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPromo.Image")));
-            this.pictureBoxPromo.Location = new System.Drawing.Point(736, 32);
-            this.pictureBoxPromo.Name = "pictureBoxPromo";
-            this.pictureBoxPromo.Size = new System.Drawing.Size(28, 29);
-            this.pictureBoxPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPromo.TabIndex = 20;
-            this.pictureBoxPromo.TabStop = false;
+            this.pictureBoxTiket.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTiket.Image")));
+            this.pictureBoxTiket.Location = new System.Drawing.Point(736, 32);
+            this.pictureBoxTiket.Name = "pictureBoxTiket";
+            this.pictureBoxTiket.Size = new System.Drawing.Size(28, 29);
+            this.pictureBoxTiket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxTiket.TabIndex = 20;
+            this.pictureBoxTiket.TabStop = false;
+            this.pictureBoxTiket.Click += new System.EventHandler(this.pictureBoxTiket_Click);
             // 
             // pictureBox2
             // 
@@ -117,21 +119,21 @@ namespace BromoSolutionEFADO.Customers
             this.label1.TabIndex = 2;
             this.label1.Text = "HALO!";
             // 
-            // label2
+            // labelWelcome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(21, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Mau terbang kemana hari ini, ";
+            this.labelWelcome.AutoSize = true;
+            this.labelWelcome.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelWelcome.Location = new System.Drawing.Point(21, 145);
+            this.labelWelcome.Name = "labelWelcome";
+            this.labelWelcome.Size = new System.Drawing.Size(193, 19);
+            this.labelWelcome.TabIndex = 3;
+            this.labelWelcome.Text = "Mau terbang kemana hari ini, ";
             // 
             // labelNamaAkun
             // 
             this.labelNamaAkun.AutoSize = true;
             this.labelNamaAkun.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelNamaAkun.Location = new System.Drawing.Point(180, 145);
+            this.labelNamaAkun.Location = new System.Drawing.Point(211, 145);
             this.labelNamaAkun.Name = "labelNamaAkun";
             this.labelNamaAkun.Size = new System.Drawing.Size(89, 19);
             this.labelNamaAkun.TabIndex = 3;
@@ -141,11 +143,10 @@ namespace BromoSolutionEFADO.Customers
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(252, 145);
+            this.label4.Location = new System.Drawing.Point(315, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 19);
+            this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 3;
-            this.label4.Text = "???";
             // 
             // pictureBoxMaskapai
             // 
@@ -167,12 +168,12 @@ namespace BromoSolutionEFADO.Customers
             this.label3.TabIndex = 3;
             this.label3.Text = "Berangkat Dari";
             // 
-            // textBox1
+            // textBoxBerangkat
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 200);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 17;
+            this.textBoxBerangkat.Location = new System.Drawing.Point(94, 200);
+            this.textBoxBerangkat.Name = "textBoxBerangkat";
+            this.textBoxBerangkat.Size = new System.Drawing.Size(151, 20);
+            this.textBoxBerangkat.TabIndex = 17;
             // 
             // label5
             // 
@@ -194,12 +195,12 @@ namespace BromoSolutionEFADO.Customers
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // textBoxTujuan
             // 
-            this.textBox2.Location = new System.Drawing.Point(377, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 17;
+            this.textBoxTujuan.Location = new System.Drawing.Point(377, 200);
+            this.textBoxTujuan.Name = "textBoxTujuan";
+            this.textBoxTujuan.Size = new System.Drawing.Size(151, 20);
+            this.textBoxTujuan.TabIndex = 17;
             // 
             // pictureBoxJadwal
             // 
@@ -221,12 +222,12 @@ namespace BromoSolutionEFADO.Customers
             this.label6.TabIndex = 3;
             this.label6.Text = "Tanggal Berangkat";
             // 
-            // dateTimePicker1
+            // dateTimePickerTanggalBerangkat
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 280);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePickerTanggalBerangkat.Location = new System.Drawing.Point(94, 280);
+            this.dateTimePickerTanggalBerangkat.Name = "dateTimePickerTanggalBerangkat";
+            this.dateTimePickerTanggalBerangkat.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePickerTanggalBerangkat.TabIndex = 19;
             // 
             // pictureBox3
             // 
@@ -248,12 +249,12 @@ namespace BromoSolutionEFADO.Customers
             this.label7.TabIndex = 3;
             this.label7.Text = "Jumlah Penumpang";
             // 
-            // numericUpDown1
+            // numericUpDownPenumpang
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(377, 280);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(151, 20);
-            this.numericUpDown1.TabIndex = 20;
+            this.numericUpDownPenumpang.Location = new System.Drawing.Point(377, 280);
+            this.numericUpDownPenumpang.Name = "numericUpDownPenumpang";
+            this.numericUpDownPenumpang.Size = new System.Drawing.Size(151, 20);
+            this.numericUpDownPenumpang.TabIndex = 20;
             // 
             // buttonCariPenerbangan
             // 
@@ -264,6 +265,7 @@ namespace BromoSolutionEFADO.Customers
             this.buttonCariPenerbangan.TabIndex = 21;
             this.buttonCariPenerbangan.Text = "CARI PENERBANGAN";
             this.buttonCariPenerbangan.UseVisualStyleBackColor = true;
+            this.buttonCariPenerbangan.Click += new System.EventHandler(this.buttonCariPenerbangan_Click);
             // 
             // FormMain
             // 
@@ -271,13 +273,13 @@ namespace BromoSolutionEFADO.Customers
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 448);
             this.Controls.Add(this.buttonCariPenerbangan);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.numericUpDownPenumpang);
+            this.Controls.Add(this.dateTimePickerTanggalBerangkat);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBoxJadwal);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxTujuan);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxBerangkat);
             this.Controls.Add(this.pictureBoxMaskapai);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -285,20 +287,21 @@ namespace BromoSolutionEFADO.Customers
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelWelcome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPromo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTiket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaskapai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxJadwal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPenumpang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,24 +311,24 @@ namespace BromoSolutionEFADO.Customers
 
         private Panel panel1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBoxPromo;
-        private PictureBox pictureBox7;
+        private PictureBox pictureBoxTiket;
+        private PictureBox logoutButton;
         private Label label1;
-        private Label label2;
+        private Label labelWelcome;
         private Label labelNamaAkun;
         private Label label4;
         private PictureBox pictureBoxMaskapai;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox textBoxBerangkat;
         private Label label5;
         private PictureBox pictureBox1;
-        private TextBox textBox2;
+        private TextBox textBoxTujuan;
         private PictureBox pictureBoxJadwal;
         private Label label6;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerTanggalBerangkat;
         private PictureBox pictureBox3;
         private Label label7;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownPenumpang;
         private Button buttonCariPenerbangan;
     }
 }

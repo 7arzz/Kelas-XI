@@ -35,6 +35,7 @@ namespace BromoSolutionEFADO
                 //dashboard.Show();
 
                 MessageBox.Show("Login Berhasil");
+                Session.loggedIn = user;
 
                 if (user.MerupakanAdmin)
                 {

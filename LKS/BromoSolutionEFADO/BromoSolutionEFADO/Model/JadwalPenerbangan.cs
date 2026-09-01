@@ -26,10 +26,9 @@ namespace BromoSolutionEFADO.Model
         public int BandaraKeberangkatanID { get; set; }
         public int BandaraTujuanID { get; set; }
         public int MaskapaiID { get; set; }
+        public System.DateTime TanggalWaktuKeberangkatan { get; set; }
         public double HargaPerTiket { get; set; }
         public int DurasiPenerbangan { get; set; }
-        public System.DateTime TanggalKeberangkatan { get; set; }
-        public Nullable<System.TimeSpan> WaktuKeberangkatan { get; set; }
     
         public virtual Bandara Bandara { get; set; }
         public virtual Bandara Bandara1 { get; set; }

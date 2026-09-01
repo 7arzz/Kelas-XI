@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="KodePenerbangan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Maskapai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BandaraKeberangkatan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BandaraTujuan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Harga.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Tanggal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="JamBerangkat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BeliTiket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -343,7 +370,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAIAAAD1h/aCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAE7NJREFUeF7t3e9rlXUfwPFzXdfZdqZnc/Nn/mj4QE2XiBZYYUlgiFAhhWTSA5V+
+        DAAACwwBP0AiyAAAE7NJREFUeF7t3e9rlXUfwPFzXdfZdqZnc/Nn/mj4QE2XiBZYYUlgiFAhhWTSA5V+
         WIgQGPQPJCK4NpukiD2pB2JKoNIDCZRsWNGPaRBG4gNbTXG53OZ2ztn5dcM+3J/76myWn3nO7b7nvF8P
         bi5Pcwvua+++1/f6Xt8rkgcAo0jhBwDwbwgHADPCAcCMcAAwIxwAzAgHADPCAcCMcAAwIxwAzAgHADPC
         AcCMcAAwIxwAzAgHADPCAcCMcAAwIxwAzAgHADPCAcCMcAAwIxwAzAgHADPCAcCMcAAwIxwAzAgHADPC
@@ -433,7 +460,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAASwCAIAAABkQySYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAsxZJREFUeF7s3XdbG1kWr+33+3+LM22rgiooIAmJIKJAgG0yJueMCCIoleT3OqzT
+        DAAACwwBP0AiyAAAsxZJREFUeF7s3XdbG1kWr+33+3+LM22rgiooIAmJIKJAgG0yJueMCCIoleT3OqzT
         e6oL3N32GFNSPfcfcwns7umZNnvv3w5r/X/fAAAAAACR9P8FvwEAAAAAiAYCIQAAAABEFIEQAAAAACKK
         QAgAAAAAEUUgBAAAAICIIhACAAAAQEQRCAEAAAAgogiEAAAAABBRBEIAAAAAiCgCIQAAAABEFIEQAAAA
         ACKKQAgAAAAAEUUgBAAAAICIIhACAAAAQEQRCAEAAAAgogiEAAAAABBRBEIAAAAAiCgCIQAAAABEFIEQ
@@ -1203,7 +1230,7 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAASwCAIAAABkQySYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAsxZJREFUeF7s3XdbG1kWr+33+3+LM22rgiooIAmJIKJAgG0yJueMCCIoleT3OqzT
+        DAAACwwBP0AiyAAAsxZJREFUeF7s3XdbG1kWr+33+3+LM22rgiooIAmJIKJAgG0yJueMCCIoleT3OqzT
         e6oL3N32GFNSPfcfcwns7umZNnvv3w5r/X/fAAAAAACR9P8FvwEAAAAAiAYCIQAAAABEFIEQAAAAACKK
         QAgAAAAAEUUgBAAAAICIIhACAAAAQEQRCAEAAAAgogiEAAAAABBRBEIAAAAAiCgCIQAAAABEFIEQAAAA
         ACKKQAgAAAAAEUUgBAAAAICIIhACAAAAQEQRCAEAAAAgogiEAAAAABBRBEIAAAAAiCgCIQAAAABEFIEQ
@@ -1970,4 +1997,31 @@
         IAQAACgogRAAAKCgBEIAAICC+j/Cb8xLDjghQwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="KodePenerbangan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Maskapai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BandaraKeberangkatan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BandaraTujuan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Harga.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Tanggal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="JamBerangkat.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BeliTiket.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>
