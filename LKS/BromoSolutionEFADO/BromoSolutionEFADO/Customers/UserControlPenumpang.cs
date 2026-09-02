@@ -14,5 +14,45 @@ namespace ContohSoal1.Customer
         {
             InitializeComponent();
         }
+
+        public int NomorPenumpang
+        {
+            set
+            {
+                labelNomor.Text = "Penumpang #" + value;
+            }
+        }
+
+        public string Title 
+        {
+            get
+            {
+                return comboBoxTitle.Text;
+            }
+        }
+
+        public string NamaLengkap
+        {
+            get
+            {
+                return textBoxNamaLengkap.Text.Trim();
+            }
+        }
+
+        public bool dataLengkap
+        {
+            get
+            {
+                return comboBoxTitle.SelectedIndex != -1
+                    && !string.IsNullOrWhiteSpace(textBoxNamaLengkap.Text);
+
+            }
+        }
+
+
+        private void UserControlPenumpang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -90,12 +90,9 @@ namespace BromoSolutionEFADO.Master
                 tambahPromo.Deskripsi = richTextBoxDeskripsi.Text;
 
                 db.KodePromoes.Add(tambahPromo);
-                db.SaveChanges();
 
                 MessageBox.Show("promo dengan Kode " + tambahPromo.Kode + " sudah di masukkan");
 
-                loadData();
-                clearForm();
                 
             }
             else
@@ -108,10 +105,12 @@ namespace BromoSolutionEFADO.Master
                 editPromo.MaksimumDiskon = Convert.ToInt32(numericUpDownMaxDiskon.Value);
                 editPromo.Deskripsi = richTextBoxDeskripsi.Text;
 
-                db.SaveChanges();
 
                 MessageBox.Show("Promo sudah di edit wokk");
             }
+                db.SaveChanges();
+                loadData();
+                clearForm();    
         }
 
         private void dataGridViewPromo_CellClick(object sender, DataGridViewCellEventArgs e)
