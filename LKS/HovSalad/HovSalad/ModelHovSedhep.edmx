@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HovSaladModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerOrder">
+          <Key>
+            <PropertyRef Name="customerOrderID" />
+          </Key>
+          <Property Name="customerOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerOrderCode" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="customerName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="totalPrice" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="orderDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="ingredientID" />
+          </Key>
+          <Property Name="ingredientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryID" Type="int" Nullable="false" />
+          <Property Name="ingredientName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemIngredients">
+          <Key>
+            <PropertyRef Name="itemIngredientsID" />
+          </Key>
+          <Property Name="itemIngredientsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orderItemsID" Type="int" Nullable="false" />
+          <Property Name="ingredientID" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="orderItemsID" />
+          </Key>
+          <Property Name="orderItemsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerOrderID" Type="int" Nullable="false" />
+          <Property Name="itemType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ingredient_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemIngredients_Ingredient">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="ItemIngredients" Type="Self.ItemIngredients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredientID" />
+            </Principal>
+            <Dependent Role="ItemIngredients">
+              <PropertyRef Name="ingredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemIngredients_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="1" />
+          <End Role="ItemIngredients" Type="Self.ItemIngredients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="orderItemsID" />
+            </Principal>
+            <Dependent Role="ItemIngredients">
+              <PropertyRef Name="orderItemsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_CustomerOrder">
+          <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerOrder">
+              <PropertyRef Name="customerOrderID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="customerOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HovSaladModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerOrder" EntityType="Self.CustomerOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemIngredients" EntityType="Self.ItemIngredients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Ingredient_Category" Association="Self.FK_Ingredient_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Ingredient" EntitySet="Ingredient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemIngredients_Ingredient" Association="Self.FK_ItemIngredients_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredient" />
+            <End Role="ItemIngredients" EntitySet="ItemIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemIngredients_OrderItems" Association="Self.FK_ItemIngredients_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="ItemIngredients" EntitySet="ItemIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_CustomerOrder" Association="Self.FK_OrderItems_CustomerOrder">
+            <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HovSaladModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Ingredients" Relationship="Self.FK_Ingredient_Category" FromRole="Category" ToRole="Ingredient" />
+        </EntityType>
+        <EntityType Name="CustomerOrder">
+          <Key>
+            <PropertyRef Name="customerOrderID" />
+          </Key>
+          <Property Name="customerOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerOrderCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="orderDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_CustomerOrder" FromRole="CustomerOrder" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="Ingredient">
+          <Key>
+            <PropertyRef Name="ingredientID" />
+          </Key>
+          <Property Name="ingredientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryID" Type="Int32" Nullable="false" />
+          <Property Name="ingredientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Ingredient_Category" FromRole="Ingredient" ToRole="Category" />
+          <NavigationProperty Name="ItemIngredients" Relationship="Self.FK_ItemIngredients_Ingredient" FromRole="Ingredient" ToRole="ItemIngredients" />
+        </EntityType>
+        <EntityType Name="ItemIngredient">
+          <Key>
+            <PropertyRef Name="itemIngredientsID" />
+          </Key>
+          <Property Name="itemIngredientsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="orderItemsID" Type="Int32" Nullable="false" />
+          <Property Name="ingredientID" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ingredient" Relationship="Self.FK_ItemIngredients_Ingredient" FromRole="ItemIngredients" ToRole="Ingredient" />
+          <NavigationProperty Name="OrderItem" Relationship="Self.FK_ItemIngredients_OrderItems" FromRole="ItemIngredients" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="orderItemsID" />
+          </Key>
+          <Property Name="orderItemsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerOrderID" Type="Int32" Nullable="false" />
+          <Property Name="itemType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerOrder" Relationship="Self.FK_OrderItems_CustomerOrder" FromRole="OrderItems" ToRole="CustomerOrder" />
+          <NavigationProperty Name="ItemIngredients" Relationship="Self.FK_ItemIngredients_OrderItems" FromRole="OrderItems" ToRole="ItemIngredients" />
+        </EntityType>
+        <Association Name="FK_Ingredient_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="categoryID" />
+            </Principal>
+            <Dependent Role="Ingredient">
+              <PropertyRef Name="categoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItems_CustomerOrder">
+          <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerOrder">
+              <PropertyRef Name="customerOrderID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="customerOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemIngredients_Ingredient">
+          <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="1" />
+          <End Role="ItemIngredients" Type="Self.ItemIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredient">
+              <PropertyRef Name="ingredientID" />
+            </Principal>
+            <Dependent Role="ItemIngredients">
+              <PropertyRef Name="ingredientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemIngredients_OrderItems">
+          <End Role="OrderItems" Type="Self.OrderItem" Multiplicity="1" />
+          <End Role="ItemIngredients" Type="Self.ItemIngredient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderItems">
+              <PropertyRef Name="orderItemsID" />
+            </Principal>
+            <Dependent Role="ItemIngredients">
+              <PropertyRef Name="orderItemsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HovSaladEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="CustomerOrders" EntityType="Self.CustomerOrder" />
+          <EntitySet Name="Ingredients" EntityType="Self.Ingredient" />
+          <EntitySet Name="ItemIngredients" EntityType="Self.ItemIngredient" />
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItem" />
+          <AssociationSet Name="FK_Ingredient_Category" Association="Self.FK_Ingredient_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Ingredient" EntitySet="Ingredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItems_CustomerOrder" Association="Self.FK_OrderItems_CustomerOrder">
+            <End Role="CustomerOrder" EntitySet="CustomerOrders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemIngredients_Ingredient" Association="Self.FK_ItemIngredients_Ingredient">
+            <End Role="Ingredient" EntitySet="Ingredients" />
+            <End Role="ItemIngredients" EntitySet="ItemIngredients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemIngredients_OrderItems" Association="Self.FK_ItemIngredients_OrderItems">
+            <End Role="OrderItems" EntitySet="OrderItems" />
+            <End Role="ItemIngredients" EntitySet="ItemIngredients" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HovSaladModelStoreContainer" CdmEntityContainer="HovSaladEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="HovSaladModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerOrders">
+            <EntityTypeMapping TypeName="HovSaladModel.CustomerOrder">
+              <MappingFragment StoreEntitySet="CustomerOrder">
+                <ScalarProperty Name="customerOrderID" ColumnName="customerOrderID" />
+                <ScalarProperty Name="customerOrderCode" ColumnName="customerOrderCode" />
+                <ScalarProperty Name="customerName" ColumnName="customerName" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredients">
+            <EntityTypeMapping TypeName="HovSaladModel.Ingredient">
+              <MappingFragment StoreEntitySet="Ingredient">
+                <ScalarProperty Name="ingredientID" ColumnName="ingredientID" />
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+                <ScalarProperty Name="ingredientName" ColumnName="ingredientName" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemIngredients">
+            <EntityTypeMapping TypeName="HovSaladModel.ItemIngredient">
+              <MappingFragment StoreEntitySet="ItemIngredients">
+                <ScalarProperty Name="itemIngredientsID" ColumnName="itemIngredientsID" />
+                <ScalarProperty Name="orderItemsID" ColumnName="orderItemsID" />
+                <ScalarProperty Name="ingredientID" ColumnName="ingredientID" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="HovSaladModel.OrderItem">
+              <MappingFragment StoreEntitySet="OrderItems">
+                <ScalarProperty Name="orderItemsID" ColumnName="orderItemsID" />
+                <ScalarProperty Name="customerOrderID" ColumnName="customerOrderID" />
+                <ScalarProperty Name="itemType" ColumnName="itemType" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOMSKUY 2</title>
+  </head>
+  <body>
+    <div id="screen-welcome">
+      <img src="Images/logo.png" alt="BOMSKUY" />
+
+      <form>
+        <input
+          type="text"
+          id="input-username"
+          placeholder="Input Username"
+          maxlength="15"
+          autocomplete="off"
+        />
+
+        <select id="select-level">
+          <option value="" disabled selected>Select Level</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button type="button" id="btn-play">Play</button>
+        <button type="button" id="btn-instruction">Instruction</button>
+      </form>
+    </div>
+
+    <hr />
+
+    <div id="modal-instruction">
+      <button id="modal-close-btn">&times;</button>
+      <h2>How to play game</h2>
+      <ol>
+        <li>Input Username</li>
+        <li>Put the bomb</li>
+        <li>Blow up as many walls as possible</li>
+        <li>Blow up enemies</li>
+        <li>Enjoy!</li>
+      </ol>
+    </div>
+
+    <hr />
+
+    <div id="screen-game">
+      <div id="game-area">
+        <canvas id="game-canvas"></canvas>
+      </div>
+
+      <div id="game-sidebar">
+        <img src="Images/logo_white.png" alt="BOMSKUY" />
+
+        <p>Player : <span id="sb-player">-</span></p>
+        <p>Time &nbsp;: <span id="sb-time">00:00</span></p>
+
+        <div id="sb-hearts"></div>
+
+        <div>
+          <img src="Images/wall_crack.png" alt="Walls" />
+          <span> = </span>
+          <span id="sb-walls">0</span>
+        </div>
+        <div>
+          <img src="Images/tnt.png" alt="TNT" />
+          <span> = </span>
+          <span id="sb-tnt">0</span>
+        </div>
+        <div>
+          <img src="Images/ice.png" alt="Ice" />
+          <span> = </span>
+          <span id="sb-ice">0</span>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div id="screen-gameover">
+      <h1>Game Over!</h1>
+      <p id="go-subtitle"></p>
+
+      <div>
+        <img src="Images/wall_crack.png" alt="Walls" />
+        <span> = </span>
+        <span id="go-walls">0</span>
+      </div>
+      <div>
+        <img src="Images/tnt.png" alt="TNT" />
+        <span> = </span>
+        <span id="go-tnt">0</span>
+      </div>
+      <div>
+        <img src="Images/ice.png" alt="Ice" />
+        <span> = </span>
+        <span id="go-ice">0</span>
+      </div>
+
+      <button type="button" id="btn-save-score">Save Score</button>
+      <button type="button" id="btn-leaderboard-go">Leaderboards</button>
+    </div>
+
+    <hr />
+
+    <div id="screen-leaderboard">
+      <h1>Leaderboards</h1>
+
+      <table id="table-lb" border="1">
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Time</th>
+            <th><img src="Images/wall_crack.png" alt="Walls" /></th>
+            <th><img src="Images/tnt.png" alt="TNT" /></th>
+            <th><img src="Images/ice.png" alt="Ice" /></th>
+          </tr>
+        </thead>
+        <tbody id="lb-body"></tbody>
+      </table>
+
+      <button type="button" id="btn-play-again">Play Again</button>
+      <button type="button" id="btn-reset">Reset</button>
+    </div>
+  </body>
+</html>

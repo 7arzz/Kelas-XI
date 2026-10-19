@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BomsKuy — Pilih Game</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      }
+
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 36px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        min-width: 200px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Shimmer effect */
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.25),
+          transparent
+        );
+        transform: skewX(-20deg);
+        transition: left 0.5s ease;
+      }
+
+      .btn:hover::before {
+        left: 150%;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn:active {
+        transform: translateY(0px) scale(0.97);
+      }
+
+      /* Primary button - Bomskuy 1 */
+      .btn-primary {
+        background: linear-gradient(135deg, #6c63ff, #e942b8);
+        box-shadow: 0 4px 20px rgba(108, 99, 255, 0.45);
+      }
+
+      .btn-primary:hover {
+        box-shadow: 0 8px 28px rgba(108, 99, 255, 0.65);
+      }
+
+      /* Secondary button - Bomskuy 2 */
+      .btn-secondary {
+        background: linear-gradient(135deg, #00c9a7, #0070f3);
+        box-shadow: 0 4px 20px rgba(0, 112, 243, 0.45);
+      }
+
+      .btn-secondary:hover {
+        box-shadow: 0 8px 28px rgba(0, 112, 243, 0.65);
+      }
+
+      /* Icon inside button */
+      .btn-icon {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-container">
+      <a href="bomskuy1.html" class="btn btn-primary" id="btn-bomskuy1">
+        <span class="btn-icon">🚀</span>
+        Bomskuy 1
+      </a>
+      <a href="bomskuy2.html" class="btn btn-secondary" id="btn-bomskuy2">
+        <span class="btn-icon">💣</span>
+        Bomskuy 2
+      </a>
+    </div>
+  </body>
+</html>

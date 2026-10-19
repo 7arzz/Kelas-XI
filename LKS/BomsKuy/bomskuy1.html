@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOMSKUY</title>
+    <style>
+      /* ==========================================
+       1. RESET & GAYA DASAR
+    ========================================== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background: #111;
+        color: #fff;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+
+      /* Tombol Umum */
+      .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        filter: brightness(1.2);
+      }
+      .btn-dark {
+        background: #000;
+        color: #fff;
+      }
+      .btn-orange {
+        background: #cf3708;
+        color: #fff;
+      }
+      .btn-blue {
+        background: #0070ba;
+        color: #fff;
+      }
+
+      /* ==========================================
+       2. MANAJEMEN LAYAR (SCREEN)
+    ========================================== */
+      .screen {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .screen.active {
+        display: block;
+      }
+
+      /* LAYAR 1: WELCOME */
+      #screen-welcome {
+        background: #fff;
+        color: #222;
+        text-align: center;
+      }
+      .welcome-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        text-align: center;
+      }
+      .welcome-logo {
+        height: 100px;
+        margin-bottom: 25px;
+        display: inline-block;
+      }
+      .welcome-form {
+        width: 100%;
+      }
+      .welcome-form input,
+      .welcome-form select {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 12px;
+        background: #c0392b;
+        border: 2px solid #000;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        outline: none;
+        display: block;
+      }
+      .welcome-form input::placeholder {
+        color: #f1c40f;
+      }
+      .welcome-form select option {
+        background: #333;
+        color: #fff;
+      }
+      .welcome-btns {
+        margin-top: 15px;
+        text-align: center;
+      }
+      .welcome-btns button {
+        width: 47%;
+        padding: 12px 0;
+        margin: 0 1%;
+        display: inline-block;
+      }
+
+      /* MODAL: INSTRUCTION */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+      }
+      .modal.open {
+        display: block;
+      }
+      .modal-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #1e1e1e;
+        padding: 30px 40px;
+        border-radius: 10px;
+        width: 480px;
+        color: #fff;
+        text-align: left;
+      }
+      .modal-box h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+      .modal-box ol {
+        margin: 0;
+        padding-left: 25px;
+        line-height: 2;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #e74c3c;
+        color: #fff;
+        border: 2px solid #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        padding: 0;
+      }
+
+      /* LAYAR 2: GAMEPLAY & SIDEBAR */
+      #screen-game {
+        background: #444;
+      }
+      #game-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 220px;
+        bottom: 0;
+        background: #fff;
+        overflow: hidden;
+      }
+      #game-canvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        image-rendering: pixelated;
+        width: 705px;
+        height: 578px;
+        max-width: 96%;
+        max-height: 96%;
+      }
+      #game-sidebar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 220px;
+        height: 100%;
+        background: #2b2b2b;
+        padding: 25px 20px;
+        border-left: 2px solid #333;
+      }
+      .sidebar-logo {
+        max-height: 36px;
+        margin-bottom: 25px;
+        display: block;
+      }
+      .sidebar-info {
+        margin-bottom: 25px;
+      }
+      .sidebar-info p {
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .sidebar-info span {
+        color: #fff;
+        font-weight: bold;
+      }
+      .sidebar-hearts {
+        margin-bottom: 25px;
+      }
+      .sidebar-hearts img {
+        width: 32px;
+        height: 32px;
+        margin-right: 6px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .sidebar-stats {
+        margin-top: 15px;
+      }
+      .stat-row {
+        margin-bottom: 18px;
+        font-size: 24px;
+        font-weight: bold;
+        height: 36px;
+        line-height: 36px;
+      }
+      .stat-row img {
+        width: 36px;
+        height: 36px;
+        vertical-align: middle;
+        margin-right: 12px;
+        display: inline-block;
+      }
+      .stat-row span {
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      /* LAYAR 3: GAME OVER & LAYAR 4: LEADERBOARD */
+      #screen-gameover,
+      #screen-leaderboard {
+        background: #2b2b2b;
+        text-align: center;
+      }
+      .gameover-box,
+      .leaderboard-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+      }
+      .gameover-title {
+        font-size: 52px;
+        font-weight: 900;
+        margin-bottom: 15px;
+      }
+      .gameover-sub {
+        color: #eee;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 25px;
+      }
+      .stats-summary {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      .stats-summary .stat-row {
+        display: inline-block;
+        margin: 0 16px;
+      }
+      .gameover-btns,
+      .leaderboard-btns {
+        text-align: center;
+      }
+      .gameover-btns button,
+      .leaderboard-btns button {
+        margin: 0 8px;
+        padding: 12px 24px;
+        font-size: 18px;
+      }
+      .leaderboard-title {
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 25px;
+      }
+      .table-lb {
+        width: 480px;
+        margin: 0 auto 30px auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      .table-lb th,
+      .table-lb td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #444;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      .table-lb th:first-child,
+      .table-lb td:first-child {
+        text-align: left;
+      }
+      .table-lb th img {
+        width: 26px;
+        height: 26px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. WELCOME SCREEN -->
+    <div id="screen-welcome" class="screen active">
+      <div class="welcome-box">
+        <img src="Images/logo.png" alt="BOMSKUY" class="welcome-logo" />
+        <div class="welcome-form">
+          <input
+            type="text"
+            id="input-username"
+            placeholder="Input Username"
+            maxlength="15"
+            autocomplete="off"
+          />
+          <select id="select-level">
+            <option value="" disabled selected>Select Level</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <div class="welcome-btns">
+            <button class="btn btn-dark" id="btn-play">Play</button>
+            <button class="btn btn-dark" id="btn-instruction">
+              Instruction
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL INSTRUCTION -->
+    <div id="modal-instruction" class="modal">
+      <div class="modal-box">
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+        <h2>How to play game</h2>
+        <ol>
+          <li>Input Username</li>
+          <li>Put the bomb</li>
+          <li>Blow up as many walls as possible</li>
+          <li>Blow up enemies</li>
+          <li>Enjoy!</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 2. GAME SCREEN -->
+    <div id="screen-game" class="screen">
+      <div id="game-area">
+        <canvas id="game-canvas"></canvas>
+      </div>
+      <div id="game-sidebar">
+        <img src="Images/logo_white.png" alt="BOMSKUY" class="sidebar-logo" />
+        <div class="sidebar-info">
+          <p>Player : <span id="sb-player">-</span></p>
+          <p>Time &nbsp;: <span id="sb-time">00:00</span></p>
+        </div>
+        <div class="sidebar-hearts" id="sb-hearts"></div>
+        <div class="sidebar-stats">
+          <div class="stat-row">
+            <img src="Images/wall_crack.png" /> <span>=</span>
+            <span id="sb-walls">0</span>
+          </div>
+          <div class="stat-row">
+            <img src="Images/tnt.png" /> <span>=</span>
+            <span id="sb-tnt">0</span>
+          </div>
+          <div class="stat-row">
+            <img src="Images/ice.png" /> <span>=</span>
+            <span id="sb-ice">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. GAME OVER SCREEN -->
+    <div id="screen-gameover" class="screen">
+      <div class="gameover-box">
+        <h1 class="gameover-title">Game Over!</h1>
+        <p id="go-subtitle" class="gameover-sub"></p>
+        <div class="stats-summary">
+          <div class="stat-row">
+            <img src="Images/wall_crack.png" /> <span>=</span>
+            <span id="go-walls">0</span>
+          </div>
+          <div class="stat-row">
+            <img src="Images/tnt.png" /> <span>=</span>
+            <span id="go-tnt">0</span>
+          </div>
+          <div class="stat-row">
+            <img src="Images/ice.png" /> <span>=</span>
+            <span id="go-ice">0</span>
+          </div>
+        </div>
+        <div class="gameover-btns">
+          <button class="btn btn-orange" id="btn-save-score">Save Score</button>
+          <button class="btn btn-blue" id="btn-leaderboard-go">
+            Leaderboards
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. LEADERBOARD SCREEN -->
+    <div id="screen-leaderboard" class="screen">
+      <div class="leaderboard-box">
+        <h1 class="leaderboard-title">Leaderboards</h1>
+        <table class="table-lb">
+          <thead>
+            <tr>
+              <th>Player Name</th>
+              <th>Time</th>
+              <th><img src="Images/wall_crack.png" /></th>
+              <th><img src="Images/tnt.png" /></th>
+              <th><img src="Images/ice.png" /></th>
+            </tr>
+          </thead>
+          <tbody id="lb-body"></tbody>
+        </table>
+        <div class="leaderboard-btns">
+          <button class="btn btn-orange" id="btn-play-again">Play Again</button>
+          <button class="btn btn-blue" id="btn-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+       JAVASCRIPT GAME BOMSKUY
+  ========================================== -->
+    <script>
+      /* ------------------------------------------
+       1. KONFIGURASI & VARIABEL UTAMA
+    ------------------------------------------ */
+      const COLS = 11,
+        ROWS = 9,
+        TILE = 64;
+      const OFFSET_X = 1,
+        OFFSET_Y = 1;
+      const canvas = document.getElementById("game-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = 705;
+      canvas.height = 578;
+
+      const LEVEL_CONFIG = {
+        easy: { bricks: 20, enemies: 1, enemySpeed: 800 },
+        medium: { bricks: 26, enemies: 2, enemySpeed: 650 },
+        hard: { bricks: 32, enemies: 3, enemySpeed: 500 },
+      };
+
+      // State permainan terpusat
+      const state = {
+        username: "",
+        level: "easy",
+        running: false,
+        hearts: 3,
+        walls: 0,
+        tnt: 0,
+        ice: 0,
+        time: 0,
+        timerId: null,
+        grid: [], // 0: Kosong, 1: Batu (Stone), 2: Dinding (Brick)
+        hiddenItems: {}, // Item tersembunyi di bawah brick
+        droppedItems: {}, // Item di arena tanah
+        player: {
+          r: 1,
+          c: 1,
+          dir: "down",
+          invincibleUntil: 0,
+          lastMove: 0,
+          speedDelay: 170,
+        },
+        enemies: [],
+        bombs: [],
+        explosions: [],
+      };
+
+      /* ------------------------------------------
+       2. MEMUAT SEMUA GAMBAR
+    ------------------------------------------ */
+      const IMAGES = {};
+      const imgList = [
+        "background.jpg",
+        "wall.png",
+        "wall_crack.png",
+        "bomb.png",
+        "tnt.png",
+        "ice.png",
+        "heart.png",
+        "heartFull.png",
+        "heartGone.png",
+        "char_down.png",
+        "char_up.png",
+        "char_left.png",
+        "char_right.png",
+        "dog_down.png",
+        "dog_up.png",
+        "dog_left.png",
+        "dog_right.png",
+        "explosion.png",
+      ];
+      imgList.forEach((name) => {
+        const key = name.replace(".png", "").replace(".jpg", "");
+        const img = new Image();
+        img.src = "Images/" + name;
+        IMAGES[key] = img;
+      });
+
+      // Helper untuk menggambar gambar dengan fallback jika belum termuat
+      function drawImg(key, x, y, w, h) {
+        const img = IMAGES[key];
+        if (img && img.complete && img.naturalWidth > 0) {
+          ctx.drawImage(img, x, y, w, h);
+        }
+      }
+
+      /* ------------------------------------------
+       3. NAVIGASI LAYAR
+    ------------------------------------------ */
+      function showScreen(id) {
+        document
+          .querySelectorAll(".screen")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById("screen-" + id).classList.add("active");
+      }
+
+      /* ------------------------------------------
+       4. INISIALISASI & MEMULAI GAME
+    ------------------------------------------ */
+      function startGame() {
+        state.username =
+          state.username ||
+          document.getElementById("input-username").value.trim() ||
+          "Player";
+        state.level =
+          state.level ||
+          document.getElementById("select-level").value ||
+          "easy";
+        const cfg = LEVEL_CONFIG[state.level] || LEVEL_CONFIG.easy;
+        state.running = true;
+        state.hearts = 3;
+        state.walls = 0;
+        state.tnt = 0;
+        state.ice = 0;
+        state.time = 0;
+        state.bombs = [];
+        state.explosions = [];
+        state.droppedItems = {};
+        state.hiddenItems = {};
+        state.player = {
+          r: 1,
+          c: 1,
+          dir: "down",
+          invincibleUntil: 0,
+          lastMove: 0,
+          speedDelay: 170,
+        };
+
+        // Buat Grid (0 = Kosong, 1 = Batu/Stone)
+        state.grid = Array.from({ length: ROWS }, (_, r) =>
+          Array.from({ length: COLS }, (_, c) => {
+            if (r === 0 || r === ROWS - 1 || c === 0 || c === COLS - 1)
+              return 1;
+            if (r % 2 === 0 && c % 2 === 0) return 1;
+            return 0;
+          }),
+        );
+
+        // Pasang Brick (Dinding) acak (hindari zona awal pemain [1,1])
+        const safe = ["1,1", "1,2", "2,1"];
+        let placed = 0;
+        const brickCoords = [];
+        while (placed < cfg.bricks) {
+          const r = 1 + Math.floor(Math.random() * (ROWS - 2));
+          const c = 1 + Math.floor(Math.random() * (COLS - 2));
+          if (state.grid[r][c] === 0 && !safe.includes(`${r},${c}`)) {
+            state.grid[r][c] = 2; // 2 = Brick
+            brickCoords.push(`${r},${c}`);
+            placed++;
+          }
+        }
+
+        // Sembunyikan item Heart (cracked), TNT, Ice di bawah brick secara acak
+        const itemTypes = ["heart", "tnt", "ice"];
+        brickCoords.sort(() => Math.random() - 0.5);
+        itemTypes.forEach((type, i) => {
+          if (brickCoords[i]) state.hiddenItems[brickCoords[i]] = type;
+        });
+
+        // Munculkan Musuh di posisi kosong yang jauh dari player
+        state.enemies = [];
+        const emptySpots = [];
+        for (let r = ROWS - 2; r >= 1; r--) {
+          for (let c = COLS - 2; c >= 1; c--) {
+            if (state.grid[r][c] === 0 && (r > 2 || c > 2))
+              emptySpots.push({ r, c });
+          }
+        }
+        emptySpots.sort(() => Math.random() - 0.5);
+        for (let i = 0; i < cfg.enemies && i < emptySpots.length; i++) {
+          state.enemies.push({
+            r: emptySpots[i].r,
+            c: emptySpots[i].c,
+            dir: "left",
+            lastMove: 0,
+            speed: cfg.enemySpeed,
+          });
+        }
+
+        // Timer Permainan
+        clearInterval(state.timerId);
+        state.timerId = setInterval(() => {
+          if (!state.running) return;
+          state.time++;
+          const m = String(Math.floor(state.time / 60)).padStart(2, "0");
+          const s = String(state.time % 60).padStart(2, "0");
+          document.getElementById("sb-time").textContent = `${m}:${s}`;
+        }, 1000);
+
+        updateSidebar();
+        showScreen("game");
+        requestAnimationFrame(gameLoop);
+      }
+
+      /* ------------------------------------------
+       5. UPDATE SIDEBAR (Termasuk heartFull & heartGone)
+    ------------------------------------------ */
+      function updateSidebar() {
+        document.getElementById("sb-player").textContent = state.username;
+        document.getElementById("sb-walls").textContent = state.walls;
+        document.getElementById("sb-tnt").textContent = state.tnt;
+        document.getElementById("sb-ice").textContent = state.ice;
+
+        // Nyawa: heartFull untuk aktif, heartGone untuk yang hilang/mati
+        const heartsContainer = document.getElementById("sb-hearts");
+        heartsContainer.innerHTML = "";
+        for (let i = 0; i < 3; i++) {
+          const img = document.createElement("img");
+          img.src =
+            i < state.hearts ? "Images/heartFull.png" : "Images/heartGone.png";
+          heartsContainer.appendChild(img);
+        }
+      }
+
+      /* ------------------------------------------
+       6. LOGIKA GERAK & KONTROL
+    ------------------------------------------ */
+      function canMove(r, c) {
+        if (r < 0 || r >= ROWS || c < 0 || c >= COLS) return false;
+        if (state.grid[r][c] !== 0) return false; // Batu atau Brick
+        if (state.bombs.some((b) => b.r === r && b.c === c)) return false;
+        return true;
+      }
+
+      function movePlayer(dr, dc, dir) {
+        state.player.dir = dir;
+        const nr = state.player.r + dr,
+          nc = state.player.c + dc;
+        if (canMove(nr, nc)) {
+          state.player.r = nr;
+          state.player.c = nc;
+          // Ambil item jika ada
+          const key = `${nr},${nc}`;
+          if (state.droppedItems[key]) {
+            const item = state.droppedItems[key];
+            if (item === "heart") hurtPlayer();
+            if (item === "tnt") state.tnt++;
+            if (item === "ice") {
+              state.ice++;
+              state.player.speedDelay = Math.max(
+                80,
+                state.player.speedDelay - 25,
+              );
+            }
+            delete state.droppedItems[key];
+            updateSidebar();
+          }
+        }
+      }
+
+      function hurtPlayer() {
+        if (Date.now() < state.player.invincibleUntil) return;
+        state.hearts--;
+        state.player.invincibleUntil = Date.now() + 1500; // Efek kebal kedip 1.5 detik
+        updateSidebar();
+        if (state.hearts <= 0) endGame();
+      }
+
+      // Input Keyboard
+      const keys = {};
+      window.addEventListener("keydown", (e) => {
+        if (!state.running) return;
+        keys[e.key] = true;
+        if (e.key === " " || e.key === "Enter") {
+          e.preventDefault();
+          placeBomb();
+        }
+      });
+      window.addEventListener("keyup", (e) => {
+        keys[e.key] = false;
+      });
+
+      function handleInput() {
+        const now = Date.now();
+        if (now - state.player.lastMove < state.player.speedDelay) return;
+        if (keys["ArrowUp"] || keys["w"] || keys["W"]) {
+          movePlayer(-1, 0, "up");
+          state.player.lastMove = now;
+        } else if (keys["ArrowDown"] || keys["s"] || keys["S"]) {
+          movePlayer(1, 0, "down");
+          state.player.lastMove = now;
+        } else if (keys["ArrowLeft"] || keys["a"] || keys["A"]) {
+          movePlayer(0, -1, "left");
+          state.player.lastMove = now;
+        } else if (keys["ArrowRight"] || keys["d"] || keys["D"]) {
+          movePlayer(0, 1, "right");
+          state.player.lastMove = now;
+        }
+      }
+
+      /* ------------------------------------------
+       7. LOGIKA BOM & LEDAKAN
+    ------------------------------------------ */
+      function placeBomb() {
+        const { r, c } = state.player;
+        if (state.bombs.some((b) => b.r === r && b.c === c)) return;
+        state.bombs.push({
+          r,
+          c,
+          explodeAt: Date.now() + 2500,
+          range: 1 + state.tnt,
+        });
+      }
+
+      function updateBombs() {
+        const now = Date.now();
+        for (let i = state.bombs.length - 1; i >= 0; i--) {
+          const b = state.bombs[i];
+          if (now >= b.explodeAt) {
+            explodeBomb(b);
+            state.bombs.splice(i, 1);
+          }
+        }
+      }
+
+      function explodeBomb(bomb) {
+        const affected = [[bomb.r, bomb.c]];
+        const dirs = [
+          [-1, 0],
+          [1, 0],
+          [0, -1],
+          [0, 1],
+        ];
+
+        dirs.forEach(([dr, dc]) => {
+          for (let step = 1; step <= bomb.range; step++) {
+            const nr = bomb.r + dr * step,
+              nc = bomb.c + dc * step;
+            if (
+              nr < 0 ||
+              nr >= ROWS ||
+              nc < 0 ||
+              nc >= COLS ||
+              state.grid[nr][nc] === 1
+            )
+              break; // Batu henti
+            affected.push([nr, nc]);
+            if (state.grid[nr][nc] === 2) {
+              // Hancurkan brick
+              state.grid[nr][nc] = 0;
+              state.walls++;
+              const key = `${nr},${nc}`;
+              if (state.hiddenItems[key]) {
+                state.droppedItems[key] = state.hiddenItems[key];
+                delete state.hiddenItems[key];
+              }
+              updateSidebar();
+              break;
+            }
+          }
+        });
+
+        // Ledakan visual selama 400ms
+        state.explosions.push({ cells: affected, expire: Date.now() + 400 });
+
+        // Ledakan mengenai player
+        if (
+          affected.some(
+            ([r, c]) => r === state.player.r && c === state.player.c,
+          )
+        ) {
+          hurtPlayer();
+        }
+        // Ledakan mengenai musuh
+        state.enemies = state.enemies.filter(
+          (e) => !affected.some(([r, c]) => r === e.r && c === e.c),
+        );
+      }
+
+      /* ------------------------------------------
+       8. LOGIKA MUSUH (AI SEDERHANA)
+    ------------------------------------------ */
+      function updateEnemies() {
+        const now = Date.now();
+        state.enemies.forEach((en) => {
+          if (now - en.lastMove < en.speed) return;
+          en.lastMove = now;
+
+          const dirs = [
+            [-1, 0, "up"],
+            [1, 0, "down"],
+            [0, -1, "left"],
+            [0, 1, "right"],
+          ];
+          const valid = dirs.filter(([dr, dc]) =>
+            canMove(en.r + dr, en.c + dc),
+          );
+          if (valid.length === 0) return;
+
+          // 60% mengejar pemain, 40% acak
+          if (Math.random() < 0.6) {
+            valid.sort((a, b) => {
+              const da =
+                Math.abs(en.r + a[0] - state.player.r) +
+                Math.abs(en.c + a[1] - state.player.c);
+              const db =
+                Math.abs(en.r + b[0] - state.player.r) +
+                Math.abs(en.c + b[1] - state.player.c);
+              return da - db;
+            });
+          }
+          const chosen = valid[0];
+          en.r += chosen[0];
+          en.c += chosen[1];
+          en.dir = chosen[2];
+
+          // Tabrakan musuh dengan pemain
+          if (en.r === state.player.r && en.c === state.player.c) hurtPlayer();
+        });
+      }
+
+      /* ------------------------------------------
+       9. GAMBAR CANVAS (RENDER)
+    ------------------------------------------ */
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 1. Gambar Arena & Grid dari background.jpg (1:1 pixel sempurna, 705x578)
+        if (IMAGES["background"] && IMAGES["background"].complete) {
+          ctx.drawImage(
+            IMAGES["background"],
+            0,
+            0,
+            canvas.width,
+            canvas.height,
+          );
+        } else {
+          ctx.fillStyle = "#4a7c2f";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // 2. Gambar dinding brick (wall.png, 64x64 pixel sempurna)
+        for (let r = 0; r < ROWS; r++) {
+          for (let c = 0; c < COLS; c++) {
+            if (state.grid[r][c] === 2) {
+              drawImg(
+                "wall",
+                OFFSET_X + c * TILE,
+                OFFSET_Y + r * TILE,
+                TILE,
+                TILE,
+              );
+            }
+          }
+        }
+
+        // 3. Gambar Item di Tanah (49x44 ditengah tile 64x64)
+        for (const key in state.droppedItems) {
+          const [r, c] = key.split(",").map(Number);
+          drawImg(
+            state.droppedItems[key],
+            OFFSET_X + c * TILE + 7,
+            OFFSET_Y + r * TILE + 10,
+            49,
+            44,
+          );
+        }
+
+        // 4. Gambar Bom (49x44 ditengah tile 64x64)
+        state.bombs.forEach((b) => {
+          drawImg(
+            "bomb",
+            OFFSET_X + b.c * TILE + 7,
+            OFFSET_Y + b.r * TILE + 10,
+            49,
+            44,
+          );
+        });
+
+        // 5. Gambar Efek Ledakan Bom (explosion.png 64x64)
+        const now = Date.now();
+        state.explosions.forEach((exp) => {
+          exp.cells.forEach(([r, c]) => {
+            if (IMAGES["explosion"] && IMAGES["explosion"].complete) {
+              drawImg(
+                "explosion",
+                OFFSET_X + c * TILE,
+                OFFSET_Y + r * TILE,
+                TILE,
+                TILE,
+              );
+            } else {
+              ctx.fillStyle = "rgba(231, 76, 60, 0.75)";
+              ctx.fillRect(
+                OFFSET_X + c * TILE,
+                OFFSET_Y + r * TILE,
+                TILE,
+                TILE,
+              );
+            }
+          });
+        });
+        state.explosions = state.explosions.filter((exp) => now < exp.expire);
+
+        // 6. Gambar Musuh (dog_*.png, 60x65)
+        state.enemies.forEach((en) => {
+          drawImg(
+            `dog_${en.dir}`,
+            OFFSET_X + en.c * TILE + 2,
+            OFFSET_Y + en.r * TILE - 1,
+            60,
+            65,
+          );
+        });
+
+        // 7. Gambar Karakter Pemain (char_*.png, 60x65, kedip saat terkena serangan)
+        const isBlinking =
+          now < state.player.invincibleUntil && Math.floor(now / 150) % 2 === 0;
+        if (!isBlinking) {
+          const px = OFFSET_X + state.player.c * TILE + 2;
+          const py = OFFSET_Y + state.player.r * TILE - 1;
+          drawImg(`char_${state.player.dir}`, px, py, 60, 65);
+
+          // Jika memiliki ice atau tnt, tampilkan status overlay seperti di referensi
+          if (state.ice > 0) {
+            drawImg("ice", px + 5, py + 5, 49, 44);
+          }
+          if (state.tnt > 0) {
+            drawImg("tnt", px + 5, py - 12, 49, 44);
+          }
+        }
+      }
+
+      /* ------------------------------------------
+       10. GAME LOOP
+    ------------------------------------------ */
+      function gameLoop() {
+        if (!state.running) return;
+        handleInput();
+        updateBombs();
+        updateEnemies();
+        render();
+        requestAnimationFrame(gameLoop);
+      }
+
+      /* ------------------------------------------
+       11. SELESAI GAME & LEADERBOARD
+    ------------------------------------------ */
+      function endGame() {
+        state.running = false;
+        clearInterval(state.timerId);
+
+        const m = String(Math.floor(state.time / 60)).padStart(2, "0");
+        const s = String(state.time % 60).padStart(2, "0");
+        const timeStr = `${m}:${s}`;
+
+        document.getElementById("go-subtitle").textContent =
+          `Good job ${state.username}! your time ${timeStr} with results:`;
+        document.getElementById("go-walls").textContent = state.walls;
+        document.getElementById("go-tnt").textContent = state.tnt;
+        document.getElementById("go-ice").textContent = state.ice;
+
+        // Persiapan tombol save
+        const btnSave = document.getElementById("btn-save-score");
+        btnSave.textContent = "Save Score";
+        btnSave.disabled = false;
+        btnSave.onclick = () => {
+          const lb = JSON.parse(localStorage.getItem("bomskuy_lb") || "[]");
+          lb.push({
+            username: state.username,
+            time: timeStr,
+            timeSec: state.time,
+            walls: state.walls,
+            tnt: state.tnt,
+            ice: state.ice,
+          });
+          lb.sort((a, b) => b.walls - a.walls || a.timeSec - b.timeSec);
+          localStorage.setItem("bomskuy_lb", JSON.stringify(lb));
+          btnSave.textContent = "Saved!";
+          btnSave.disabled = true;
+        };
+
+        showScreen("gameover");
+      }
+
+      function renderLeaderboard() {
+        const lb = JSON.parse(localStorage.getItem("bomskuy_lb") || "[]");
+        const tbody = document.getElementById("lb-body");
+        tbody.innerHTML =
+          lb.length === 0
+            ? '<tr><td colspan="5" style="text-align:center; color:#888;">Belum ada skor</td></tr>'
+            : lb
+                .map(
+                  (item) => `
+          <tr>
+            <td>${item.username}</td>
+            <td>${item.time}</td>
+            <td>${item.walls}</td>
+            <td>${item.tnt}</td>
+            <td>${item.ice}</td>
+          </tr>
+        `,
+                )
+                .join("");
+      }
+
+      /* ------------------------------------------
+       12. EVENT LISTENER TOMBOL
+    ------------------------------------------ */
+      document.getElementById("btn-play").onclick = () => {
+        const u = document.getElementById("input-username").value.trim();
+        const l = document.getElementById("select-level").value;
+        if (!u || !l) return alert("Mohon isi Username dan pilih Level!");
+        state.username = u;
+        state.level = l;
+        startGame();
+      };
+
+      document.getElementById("btn-instruction").onclick = () => {
+        document.getElementById("modal-instruction").classList.add("open");
+      };
+      document.getElementById("modal-close-btn").onclick = () => {
+        document.getElementById("modal-instruction").classList.remove("open");
+      };
+
+      document.getElementById("btn-leaderboard-go").onclick = () => {
+        renderLeaderboard();
+        showScreen("leaderboard");
+      };
+      document.getElementById("btn-play-again").onclick = () => {
+        showScreen("welcome");
+      };
+      document.getElementById("btn-reset").onclick = () => {
+        if (confirm("Reset semua leaderboard?")) {
+          localStorage.removeItem("bomskuy_lb");
+          renderLeaderboard();
+        }
+      };
+    </script>
+  </body>
+</html>
